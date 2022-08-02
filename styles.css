@@ -18,7 +18,7 @@ body
 }
 
 /* For Smartphones */
-@media only screen and (max-width: 498px)
+@media only screen and (max-width: 520px)
 {  
     .page-padding 
     {
@@ -41,12 +41,12 @@ body
     .text-size-large 
     {
         font-size: 6vw;
-        line-height: 1.5;
+        line-height: 1.8;
         font-weight: 600;
     }
 
     .text-size-medium {
-        font-size: 0.7rem;
+        font-size: 4.5vw;
         line-height: 1.2rem;
         font-weight: 400;
     }
@@ -64,7 +64,7 @@ body
         height: 100px;
         z-index: 1;
         background-color: rgb(241, 241, 241);
-        box-shadow: 0 2px 4px rgba(45, 62, 80, .12);
+        box-shadow: 0 2px 4px rgba(45, 62, 80, 0.15);
     }
 
     .nav-container {
@@ -93,27 +93,34 @@ body
     }
 
     .main-logo {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         float: left;
+        height: 0.95rem;
+        width: auto;
     }
 
     .logo-size {
-        width: 6vw;
-        height: 6vw;
+        width: 1.6rem;
+        height: 1.6rem;
     }
 
-    .section_1 {
+    .section_1 
+    {
         position: relative;
         top: 100px;
         width: 100%;
         animation: myanimation 100s infinite;
         padding-top: 2rem;
         padding-bottom: 2rem;
-        padding-left: 27vw;
-        padding-right: 27vw;
+        padding-left: 21vw;
+        padding-right: 21vw;
         box-sizing: border-box;
+        box-shadow: 0 2px 4px rgba(45, 62, 80, .12);
     }
 
-    .content-container {
+     .intro-container
+    {   
         display: flex;
         max-width: 75rem;
         margin-right: auto;
@@ -123,19 +130,70 @@ body
         width: 100%;
     }
 
-    .section_2 {
-        position: relative;
-        top: 6rem;
-        padding-top: 2rem;
-        padding-bottom: 5rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
+    .section_2
+    {   position: relative;
+        top: 7.5rem;
         box-sizing: border-box;
+        display: grid;
+        grid-auto-flow: row;
+        grid-auto-rows: auto;
+        row-gap: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .about-container
+    {   display: block;
+        max-width: 90rem;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-self: center;
+        width: 100%;
+    }
+
+    .box-1
+    {
+        display: block;
+        width: auto;
+        height: auto;
+        text-align: center;
+        padding-top: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 10%;
+        box-sizing: border-box;
+        background-color: rgba(255, 228, 196, 0.393);
+        border-radius: 10px;
+
+    }
+
+    .box-2
+    {
+        display: block;
+        width: auto;
+        height: auto;
+        text-align: center;
+        padding-top: 10%;
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-bottom: 10%;
+        box-sizing: border-box;
+        background-color: whitesmoke;
+    }
+
+    .my-image
+    {
+        width: 70%;
+        margin: 20px;
     }
 }
 
 /* For Tablets */
-@media only screen and (min-width: 498px) and (max-width: 900px)
+@media only screen and (min-width: 520px) and (max-width: 1055px)
 {
     .page-padding 
     {
@@ -181,10 +239,10 @@ body
     {   
         position: fixed;
         width: 100%;
-        height: 140px;
+        height: 110px;
         z-index: 1;
         background-color: rgb(241, 241, 241);
-        box-shadow: 0 2px 4px rgba(45, 62, 80, .12);
+        box-shadow: 0 2px 4px rgba(45, 62, 80, 0.15);
     }
 
     .nav-container
@@ -195,7 +253,7 @@ body
         margin-left: auto;
         justify-content: space-between;
         align-self: center;
-        padding-top: 30px;
+        padding-top: 20px;
         padding-bottom: 20px;
         width: 100%;
     }
@@ -215,21 +273,24 @@ body
         display: none;
     }
 
-    .main-logo
-    {   
-        float: left;
+    .main-logo 
+    {
+       padding-top: 0.5rem;
+       float: left;
+       height: 1.1rem;
+       width: auto;
     }
 
     .logo-size
     {
-        width: 2.1rem;
-        height: 2.1rem;
+        width: 1.9rem;
+        height: 1.9rem;
     }
 
     .section_1 
     {   
         position: relative;
-        top: 140px;
+        top: 110px;
         width: 100%;
         animation: myanimation 100s infinite;
         padding-top: 2rem;
@@ -250,20 +311,70 @@ body
         width: 100%;
     }
 
-    .section_2
-    {   
-        position: relative;
-        top: 8rem;
-        padding-top: 3.5rem;
-        padding-bottom: 5rem;
-        padding-left: 5rem;
-        padding-right: 5rem;
+      .section_2
+    {   position: relative;
+        top: 7.5rem;
         box-sizing: border-box;
+        display: grid;
+        grid-auto-flow: row;
+        grid-auto-rows: auto;
+        row-gap: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .about-container
+    {   display: block;
+        max-width: 90rem;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-self: center;
+        width: 100%;
+    }
+
+    .box-1
+    {
+        display: block;
+        width: auto;
+        height: auto;
+        text-align: center;
+        padding-top: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 10%;
+        box-sizing: border-box;
+        background-color: rgba(255, 228, 196, 0.393);
+        border-radius: 10px;
+
+    }
+
+    .box-2
+    {
+        display: block;
+        width: auto;
+        height: auto;
+        text-align: center;
+        padding-top: 10%;
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-bottom: 10%;
+        box-sizing: border-box;
+        background-color: whitesmoke;
+    }
+
+    .my-image
+    {
+        width: 70%;
+        margin: 20px;
     }
 }
 
 /* For Desktops and Laptops */
-@media only screen and (min-width: 900px) 
+@media only screen and (min-width: 1055px) 
 {
     .page-padding 
     {
@@ -285,22 +396,22 @@ body
 
     .text-size-large
     {
-        font-size: 3rem;
+        font-size: 2.5rem;
         line-height: 1.7;
         font-weight: 600;
     }
 
     .text-size-medium
     {
-        font-size: 2rem;
+        font-size: 1.6rem;
         line-height: 1.5rem;
         font-weight: 400;
     }
 
     .text-size-small
     {
-        font-size: 1.5rem;
-        line-height: 2.5rem;
+        font-size: 1.2rem;
+        line-height: 2.2rem;
         font-weight: 400;
         text-align: justify;
     }
@@ -309,22 +420,22 @@ body
     {   
         position: fixed;
         width: 100%;
-        height: 150px;
+        height: 120px;
         z-index: 1;
         background-color: rgb(241, 241, 241);
-        box-shadow: 0 2px 4px rgba(45, 62, 80, .12);
+        box-shadow: 0 2px 4px rgba(45, 62, 80, 0.15);
     }
 
     .nav-container
     {   
         display: flex;
-        max-width: 90rem;
+        max-width: 85rem;
         margin-right: auto;
         margin-left: auto;
         justify-content: space-between;
         align-self: center;
-        padding-top: 30px;
-        padding-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         width: 100%;
     }
 
@@ -343,20 +454,23 @@ body
         display: none;
     }
 
-    .main-logo
-    {   
-        float: left;       
+    .main-logo 
+    {
+        padding-top: 0.5rem;
+        float: left;
+        height: 1.05rem;
+        width: auto;
     }
 
     .logo-size
     {
-        width: 2.3rem;
-        height: 2.3rem;
+        width: 1.9rem;
+        height: 1.9rem;
     }
 
     .section_1 
     {   position: relative;
-        top: 150px;
+        top: 120px;
         width: 100%;
         animation: myanimation 120s infinite;
         padding-top: 3rem;
@@ -379,7 +493,7 @@ body
 
     .section_2
     {   position: relative;
-        top: 15rem;
+        top: 10rem;
         padding-top: 5rem;
         padding-bottom: 5rem;
         padding-left: 5rem;
@@ -394,8 +508,8 @@ body
     }
 
     .about-container
-    {   display: flex;
-        max-width: 90rem;
+    {   display: block;
+        max-width: 85rem;
         margin-right: auto;
         margin-left: auto;
         justify-content: space-between;
@@ -405,7 +519,7 @@ body
 
     .box-1
     {
-        display: flexbox;
+        display: block;
         width: auto;
         height: auto;
         text-align: center;
@@ -419,7 +533,7 @@ body
 
     .box-2
     {
-        display: flexbox;
+        display: block;
         width: auto;
         height: auto;
         text-align: center;
@@ -436,8 +550,6 @@ body
         position: relative;
         top: 60%;
     }
-
-
 
 }
 

@@ -12,5 +12,5 @@ function myFunction()
 // Fade out on Scroll :
 $(window).scroll(function () {
   var scrollVar = $(window).scrollTop();
-  $(".section_1").css("opacity", 1 - scrollVar / 500);
+  $(".section_1").css("opacity", 1 - scrollVar / 300);
 })
