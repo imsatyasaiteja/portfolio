@@ -1,0 +1,456 @@
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#footer
+{
+    background-color: rgb(54, 53, 53);
+}
+
+.font
+{
+    font-family: adobe-clean,Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+    font-style: normal;
+    color: black; 
+}
+
+/* For Smartphones */
+@media only screen and (max-width: 498px)
+{  
+    .page-padding 
+    {
+        padding-right: 7vw;
+        padding-left: 7vw;
+    }
+
+    .nav-progress-bar
+    {  
+        position: absolute;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 0%;
+        height: 0.2rem;
+        z-index: 2;
+        background-color: gray;
+    }
+
+    .text-size-large 
+    {
+        font-size: 6vw;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+
+    .text-size-medium {
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+        font-weight: 400;
+    }
+
+    .text-size-small {
+        font-size: 3.5vw;
+        line-height: 1.3rem;
+        font-weight: 400;
+        text-align: justify;
+    }
+
+    #header {
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        z-index: 1;
+        background-color: rgb(241, 241, 241);
+        box-shadow: 0 2px 4px rgba(45, 62, 80, .12);
+    }
+
+    .nav-container {
+        display: flex;
+        max-width: 75vw;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-self: center;
+        padding-top: 12px;
+        padding-bottom: 8px;
+        width: 100%;
+    }
+
+    .nav-grid {
+        display: grid;
+        float: right;
+        align-items: center;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        column-gap: 4rem;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .main-logo {
+        float: left;
+    }
+
+    .logo-size {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .section_1 {
+        position: relative;
+        top: 100px;
+        width: 100%;
+        animation: myanimation 100s infinite;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 27vw;
+        padding-right: 27vw;
+        box-sizing: border-box;
+    }
+
+    .content-container {
+        display: flex;
+        max-width: 75rem;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-self: center;
+        width: 100%;
+    }
+
+    .section_2 {
+        position: relative;
+        top: 6rem;
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        box-sizing: border-box;
+    }
+}
+
+/* For Tablets */
+@media only screen and (min-width: 498px) and (max-width: 900px)
+{
+    .page-padding 
+    {
+        padding-right: 5rem;
+        padding-left: 5rem;
+    }
+
+    .nav-progress-bar
+    {  
+        position: absolute;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 0%;
+        height: 0.2rem;
+        z-index: 2;
+        background-color: gray;
+    }
+
+    .text-size-large
+    {
+        font-size: 2rem;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+
+    .text-size-medium
+    {
+        font-size: 1.5rem;
+        line-height: 1.3rem;
+        font-weight: 400;
+    }
+
+    .text-size-small
+    {
+        font-size: 1rem;
+        line-height: 1.7rem;
+        font-weight: 400;
+        text-align: justify;
+    }
+    
+    #header
+    {   
+        position: fixed;
+        width: 100%;
+        height: 140px;
+        z-index: 1;
+        background-color: rgb(241, 241, 241);
+        box-shadow: 0 2px 4px rgba(45, 62, 80, .12);
+    }
+
+    .nav-container
+    {   
+        display: flex;
+        max-width: 75rem;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-self: center;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    .nav-grid
+    {
+        display:grid;
+        float: right;
+        align-items: center;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        column-gap: 4rem;
+    }
+
+    .nav-list
+    {
+        display: none;
+    }
+
+    .main-logo
+    {   
+        float: left;
+    }
+
+    .logo-size
+    {
+        width: 2.1rem;
+        height: 2.1rem;
+    }
+
+    .section_1 
+    {   
+        position: relative;
+        top: 140px;
+        width: 100%;
+        animation: myanimation 100s infinite;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 25vw;
+        padding-right: 25vw;
+        box-sizing: border-box;
+    }
+   
+    .content-container
+    {   
+        display: flex;
+        max-width: 75rem;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-self: center;
+        width: 100%;
+    }
+
+    .section_2
+    {   
+        position: relative;
+        top: 8rem;
+        padding-top: 3.5rem;
+        padding-bottom: 5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        box-sizing: border-box;
+    }
+}
+
+/* For Desktops and Laptops */
+@media only screen and (min-width: 900px) 
+{
+    .page-padding 
+    {
+        padding-right: 5rem;
+        padding-left: 5rem;
+    }
+
+    .nav-progress-bar
+    {  
+        position: absolute;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 0%;
+        height: 0.2rem;
+        z-index: 2;
+        background-color: gray;
+    }
+
+    .text-size-large
+    {
+        font-size: 3rem;
+        line-height: 1.7;
+        font-weight: 600;
+    }
+
+    .text-size-medium
+    {
+        font-size: 2rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+    }
+
+    .text-size-small
+    {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        font-weight: 400;
+        text-align: justify;
+    }
+
+    #header
+    {   
+        position: fixed;
+        width: 100%;
+        height: 150px;
+        z-index: 1;
+        background-color: rgb(241, 241, 241);
+        box-shadow: 0 2px 4px rgba(45, 62, 80, .12);
+    }
+
+    .nav-container
+    {   
+        display: flex;
+        max-width: 90rem;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-self: center;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    .nav-grid
+    {   
+        display: grid;
+        float: right;
+        align-items: center;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        column-gap: 4rem;
+    }
+
+    .nav-button
+    {
+        display: none;
+    }
+
+    .main-logo
+    {   
+        float: left;       
+    }
+
+    .logo-size
+    {
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+
+    .section_1 
+    {   position: relative;
+        top: 150px;
+        width: 100%;
+        animation: myanimation 120s infinite;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        padding-left: 23vw;
+        padding-right: 20vw;
+        box-sizing: border-box;
+    }
+   
+    .intro-container
+    {   
+        display: flex;
+        max-width: 75rem;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-self: center;
+        width: 100%;
+    }
+
+    .section_2
+    {   position: relative;
+        top: 15rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        box-sizing: border-box;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: auto;
+        column-gap: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .about-container
+    {   display: flex;
+        max-width: 90rem;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-self: center;
+        width: 100%;
+    }
+
+    .box-1
+    {
+        display: flexbox;
+        width: auto;
+        height: auto;
+        text-align: center;
+        padding-top: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+        box-sizing: border-box;
+        background-color: gainsboro;
+    }
+
+    .box-2
+    {
+        display: flexbox;
+        width: auto;
+        height: auto;
+        text-align: center;
+        padding-top: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 10%;
+        box-sizing: border-box;
+        background-color: whitesmoke;
+    }
+
+    .my-image
+    {
+        position: relative;
+        top: 60%;
+    }
+
+
+
+}
+
+@keyframes myanimation
+{   
+    0% {background-color: rgb(209, 255, 255);}
+    12.5% {background-color: rgb(209, 255, 227);}
+    25% {background-color: rgb(255, 255, 215);}
+    37.5% {background-color: rgb(255, 229, 213);}
+    50% {background-color: rgb(255, 214, 214);}
+    62.5% {background-color: rgb(255, 223, 238);}
+    75% {background-color: rgb(252, 214, 255);}
+    87.5% {background-color: rgb(218, 216, 255);}
+    100% {background-color: rgb(212, 255, 255);}
+}
+
