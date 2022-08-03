@@ -44,19 +44,49 @@
                                 <img src="images/linkedin_logo.png" alt="linkedin_logo" class="logo-size">
                             </h2>
                         </a>
-                        <a href="https://www.google.com">
+                        <a href="https://twitter.com/imsatyasaiteja">
                             <h2>
                                 <img src="images/twitter_logo.png" alt="twitter_logo" class="logo-size">
                             </h2>
                         </a>
                     </div>
-
+                    
                     <div class="nav-button nav-grid">
-                        <a href="https://www.google.com">
-                            <h2>
-                                <img src="images/nav_log.png" alt="nav_logo" class="logo-size">
-                            </h2>
-                        </a>
+                        <div class="toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        
+                            <script>
+                                let menutoggle = document.querySelector(".toggle");
+
+                                menutoggle.onclick = function () 
+                                {
+                                    menutoggle.classList.toggle("active")
+                                }
+
+                                const navSlide = () => 
+                                {
+                                    const nav = document.querySelector(".nav-list");
+                                    const navLinks = document.querySelectorAll(".nav-list a");
+
+                                    menutoggle.addEventListener("click", () => {
+                                        nav.classList.toggle("nav-active");
+
+                                        navLinks.forEach((link, index) => {
+                                            if (link.style.animation) {
+                                                link.style.animation = "";
+                                            }
+                                            else {
+                                                link.style.animation = 'navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s';
+                                            }
+                                        });
+                                    });    
+                                };
+
+                                navSlide();
+                            </script>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -64,7 +94,7 @@
         </header>
                
         <main id="main">
-            <section id="sec_1" class="section_1">
+            <section class="section_1">
                 <div class="intro-container">
                     <h1 class="font text-size-large">
                         M Satya Sai Teja
@@ -78,33 +108,21 @@
                 </div>
             </section>
 
-            <section id="sec_2" class="section_2">         
-                <div class="about-container">
-                    <div class="box-1 font text-size-medium">
-                        Hello, Nice to meet you.
-                    </div>
-                    <div class="box-2 font text-size-small">
-                        <div><img class="my-image" src="images/about.jpg" width="300vw"></div>
-                        <br>
-                        I have serious passion for Web development, UI effects, Animation and Designing logos.
-                        and this is the first step of my journey. I've done a lot of experiments before this, but
-                        they are'nt worth mentioning as my projects. I'm very much interested in collaborating
-                        with people, create new designs, digital products and I'm quiet confident that I'll
-                        be able to make good looking Web sites.
-                        <br><br><br>
-                        In addition, Cybersecurity is another field which interests me. I'm still new to it,
-                        but I'm constantly trying to get better at it. Because I believe, being able to design
-                        good looking websites and also handling security related issues would result in creating
-                        much more sophisticated digital products.
-                    </div>
-                    
-                </div>        
+            <section class="section_2 font text-size-small">
+                I'm a fresher. Based in Visakhapatnam. Would like to work as a freelancer
             </section>
 
-            <section id="sec_3" class="section_2">
+            <section class="section_3">
+                <div class="box text-size-medium">
+                    <div id="box_1" class="box-1">
+                        Hello!
+                    </div>
+                    <div class="box-2">
+                        Welcome to my website
+                    </div>
+                </div>
             </section>
-
-            
+    
         </main>
 
         <footer id="footer">

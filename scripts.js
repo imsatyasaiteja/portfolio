@@ -7,6 +7,7 @@ function myFunction()
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
+  document.getElementById("box_1").style.translate = scrolled + "%";
 }
 
 // Fade out on Scroll :
