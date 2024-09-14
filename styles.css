@@ -181,7 +181,6 @@ p {
 }
 
 p,
-h4,
 li {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -352,7 +351,16 @@ li {
 
 @media (max-width: 1350px) {
     #nav-bar {
-        display: none;
+        height: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-link,
+    h3 {
+        text-decoration: none;
+        padding: 0 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
     }
 
     .header-box {
@@ -364,7 +372,7 @@ li {
         display: flex;
         height: 1.5rem;
         width: auto;
-        padding: 0rem 1.5rem;
+        padding: 0.5rem 1rem;
     }
 
     .hero-box {
@@ -429,7 +437,7 @@ li {
 
     .heading
     {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     #projects
@@ -438,36 +446,88 @@ li {
         width: fit-content;
     }
 
-    h3 {
-        padding: 0 3vw;
-        font-size: 1rem;
-        font-weight: 500;
-        color: rgb(255, 255, 255);
-    }
-
     p, li{
-        font-size: 0.7rem;
-        line-height: 1.2rem;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
         margin: auto;
-    }
-
-    h4 {
-        font-size: 1rem;
-        line-height: 1.6rem;
-        margin: auto;
-        text-align: center;
-        color: rgb(255, 255, 255);
     }
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 675px) {
+    #nav-bar {
+            display: none;
+        }
+    
+        #header-img {
+            padding: 0rem 2rem;
+        }
+    
+        .hello {
+            font-size: 1.3rem;
+        }
+    
+        .title {
+            font-size: 1rem;
+        }
+    
+        .subtitle {
+            font-size: 0.75rem;
+            line-height: 1.5rem;
+        }
+    
+        .button-style {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            font-weight: 500;
+        }
+    
+        h2 {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+    
+        #aboutme,
+        #skills,
+        #projects,
+        #contact {
+            padding: 1rem 0;
+        }
+    
+        .about-image {
+            flex: 1;
+            text-align: center;
+            padding: 2rem 0 0 0;
+        }
+
+        .about-content
+        {
+            padding: 1rem 2rem;
+        }
+
+        .skills-text {
+            padding: 2rem 2rem;
+        }
+    
+        .heading {
+            font-size: 0.75rem;
+        }
+    
+        p,
+        li {
+            font-size: 0.75rem;
+            line-height: 1.2rem;
+            margin: auto;
+        }
+}
+
+@media (max-width: 350px) {
     html {
         display: none;
     }
 }
 
-@keyframes myanimation
+/* @keyframes myanimation
 {   
     0% {background-color: rgb(222, 255, 255);}
     12.5% {background-color: rgb(226, 255, 237);}
@@ -478,4 +538,17 @@ li {
     75% {background-color: rgb(254, 235, 255);}
     87.5% {background-color: rgb(233, 232, 255);}
     100% {background-color: rgb(228, 255, 255);}
+} */
+
+@keyframes myanimation
+{   
+    0% {background-color: rgb(201, 255, 255);}
+    12.5% {background-color: rgb(201, 255, 237);}
+    25% {background-color: rgb(201, 255, 235);}
+    37.5% {background-color: rgb(201, 242, 234);}
+    50% {background-color: rgb(201, 237, 237);}
+    62.5% {background-color: rgb(201, 238, 246);}
+    75% {background-color: rgb(201, 235, 255);}
+    87.5% {background-color: rgb(201, 232, 255);}
+    100% {background-color: rgb(201, 255, 255);}
 }
