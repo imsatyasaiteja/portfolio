@@ -8,24 +8,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Portfolio</title>
 </head>
 
-<body>
+<body>    
     <header id="header">
         <div class="header-box">
             <div class="logo">
                 <a href="https://imsatyasaiteja.github.io/portfolio/">
-                    <img id="header-img" src="images/logo_6.png" title="logo">
+                    <img id="header-img" src="images/logo_6.png">
                 </a>
             </div>
-            <div class="navbar">
+
+            <div>
                 <nav id="nav-bar">
-                    <a class="nav-link" href="#aboutme">Hello, World!</a>
-                    <a class="nav-link" href="#skills">My Expertise</a>
+                    <a class="nav-link nav-link-transition" href="#aboutme">Hello, World!</a>
+                    <a class="nav-link" href="#skills">My Skills</a>
                     <a class="nav-link" href="#projects">Projects</a>
-                    <a class="nav-link" href="#contact">Connect</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                
+                    <div>
+                        <div class="toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="more-link">
+                            <a href="#more" id="more-button">More</a>
+                        </div>
+                    </div>
+
+                    <!-- <a class="nav-link" href="#certs">Certs</a>
+                    <a class="nav-link" href="#podcast">Podcast</a>
+                    <a class="nav-link" href="#research">Research</a> -->
                 </nav>
             </div>
         </div>
@@ -33,15 +49,29 @@
 
     <main>
         <form id="form">
+            
+            <div class="icon">
+                <a href="https://github.com/imsatyasaiteja" target="_blank">
+                    <img src="/images/cc(1).png" alt="icon" class="icon-board">
+                    <img src="/images/cc(2).png" alt="icon" class="icon-container">
+                    <img src="/images/cc(3).png" alt="icon" class="symbol">
+                </a>
+            </div>
+
             <section class="hero">
                 <div class="hero-box">
-                    <h1 class="hello">
-                        Teja Modalavalasa
-                    </h1>
-                    <div class="title">Software Developer</div>
-                    <div class="subtitle">Security Analyst || Gen-AI Professional || Network Science</div>
-                    <div>
-                        <a href="https://github.com/imsatyasaiteja" id="ColdCofyGuy" class="button-style">@ColdCofyGuy</a>
+                    <div class="hero-image">
+                        <img src="./images/teja_final.jpg" alt="Teja" class="circular">
+                    </div>
+                    <div class="hero-desc">
+                        <h1 class="hello">
+                            Teja Modalavalasa
+                        </h1>
+                        <div class="title">Software Developer</div>
+                        <div class="subtitle">Security Analyst || Gen-AI Professional || Network Science</div>
+                        <div class="coldcofy">
+                            <a href="https://github.com/imsatyasaiteja" target="_blank" id="coldcofy-button">@ColdCofy</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -49,10 +79,10 @@
             <section class="section-1">
                 <div class="section-box">
                     <div id="aboutme">
-                        <h2>Hello, World!</h2>
-                        <hr>
                         <div class="about-content">
                             <div class="about-text">
+                                <br><br>
+                                <h2>Hello, World!</h2>
                                 <p>
                                     Hey, Welcome to my portfolio!
                                     <br><br>
@@ -83,9 +113,9 @@
                                     <a href="https://linkedin.com/in/imsatyasaiteja">LinkedIn</a> and follow me on <a href="https://github.com/imsatyasaiteja">Github</a>
                                 </p>
                             </div>
-                            <div class="about-image">
+                            <!-- <div class="about-image">
                                 <img src="./images/teja_final.jpg" alt="Teja" class="circular">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -94,32 +124,68 @@
             <section class="section-2">
                 <div class="section-box">
                     <div id="skills">
-                        <h2>My Expertise</h2>
+                        <h2>My Skills</h2>
                         <br>
                         <div class="skills-content">
                             <div class="skills-text">
-                                    <div>
-                                       <div class="heading">Programming Languages</div>
-                                        <br>
-                                        <li>C/C++, Java, Python</li>
-                                        <li>JavaScript, HTML, CSS</li>
-                                        <li>SQL, Bash Scripting</li>
-                                    </div>
-                                    <br><br>
-                                    <div>
-                                        <div class="heading">Tools and Technologies</div>
-                                        <br>
-                                        <li>Operating Systems: Windows, Ubuntu/Kali Linux</li>
-                                        <li>SDE Tools: Git/Github, Cmake, Qmake, MySQL, MongoDB, PostgreSQL, Docker Containerization, AWS Web Services, Gen-AI, LLMs, RAG</li>
-                                        <li>Security Tools: Splunk SIEM, Wireshark, NS-3, Nmap Scanner, HelmetJs</li>
-                                    </div>
-                                    <br><br>
-                                    <div>
-                                        <div class="heading">Libraries & Frameworks</div>
-                                        <br>
-                                        <li>Django, Nodejs, Expressjs</li>
-                                        <li>OpenCV, Networkx, Javax.crypto</li>  
-                                    </div>                                                                     
+                                <div>
+                                    <div class="heading"><b>Programming Languages</b></div>
+                                    <br>
+                                    <li>C/C++, Java, Python</li>
+                                    <li>JavaScript, HTML, CSS</li>
+                                    <li>SQL, Bash Scripting</li>
+                                </div>
+                                <br><br>
+                                <div>
+                                    <div class="heading"><b>Tools and Technologies</b></div>
+                                    <br>
+                                    <ul>Operating Systems</ul>
+                                        <li>Windows, Ubuntu/Kali Linux</li>
+                                    <br>
+                                    <ul>SDE Tools</ul>
+                                        <li>MySQL, MongoDB, PostgreSQL</li>
+                                        <li>Git/GitHub, GitLab, Bitbucket, Jupyter Notebook, Anaconda</li>
+                                        <li>Docker Containerization, AWS, Google Cloud Platform</li>
+                                        <!-- <li>CI/CD Pipelines, Kubernetes, Jenkins, DevOps, Agile, Scrum, Jira</li> -->
+                                        <li>VS Code, PyCharm, Eclipse, IntelliJ IDEA</li>
+                                        <li>Gen-AI, LLMs, RAGs, NLP, Prompt Engineering</li>
+                                    <br>
+                                    <ul>Security Tools</ul>
+                                        <li>Splunk Cloud, Chronicle, IBM QRadar</li>
+                                        <li>Wireshark, NS-3, Nmap Scanner, HelmetJs</li>
+                                        <!-- <li>OWASP, Metasploit, Burp Suite, Snort, Suricata</li> -->
+                                        <li>Firewall, VPN, IDS/IPS, SIEM</li>
+                                </div>
+                                <br><br>
+                                <div>
+                                    <div class="heading"><b>Libraries & Frameworks</b></div>
+                                    <br>
+                                    <li>Nodejs, Expressjs, Django, Flask</li>
+                                    <li>TensorFlow, PyTorch, Networkx, Javax.crypto</li>
+                                    <li>OpenCV, Cmake, Qmake, Makefile</li>
+                                </div>
+                            </div>
+                            <div class="certs">
+                                <div id="cert-box-1" class="cert-box">
+                                    <a href="https://coursera.org/share/58af1fc413b412ef2356823e68586f50" target="_blank">
+                                        <img src="certs/Google_Cybersecurity_Professional_sq.jpg">
+                                    </a>
+                                </div>
+                                <div id="cert-box-2" class="cert-box">
+                                    <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=2C0E4AE751D76D3438060772E81ED4CBCB14A6F56F9422083987540AFE53F83D" target="_blank">
+                                        <img src="certs/OCI_Gen_AI_Professional_sq.jpg">
+                                    </a>
+                                </div>
+                                <div id="cert-box-3" class="cert-box">
+                                    <a href="https://freecodecamp.org/certification/imsatyasaiteja/javascript-algorithms-and-data-structures" target="_blank">
+                                        <img src="certs/FCC_Js_Algo_Ds.png">
+                                    </a>
+                                </div>
+                                <div id="cert-box-4" class="cert-box">
+                                    <a href="https://freecodecamp.org/certification/imsatyasaiteja/responsive-web-design" target="_blank">
+                                        <img src="certs/FCC_Web_Design.png">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,53 +193,51 @@
             </section>
             
             <section class="section-3">
-                <div>
-                    <div id="projects">
-                        <h2> Projects </h2>
-                        <hr>
-                        <p>Click on the images to Navigate to my projects</p>
-                        <br>
-                        <div id="boxes">
-                            <div id="box-1" class="proj-box">
-                                <a href="https://imsatyasaiteja.github.io/Tribute_page/">
-                                    <img src="projects/tribute.png">
-                                </a>
-                            </div>
-                            <div id="box-2" class="proj-box">
-                                <a href="https://github.com/imsatyasaiteja/Attendance-Management-System">
-                                    <img src="projects/ams_app.png">
-                                </a>
-                            </div>
-                            <div id="box-3" class="proj-box">
-                                <a href="https://github.com/imsatyasaiteja/Network_Science">
-                                    <img src="projects/network_science.png">
-                                </a>
-                            </div>
-                            <div id="box-4" class="proj-box">
-                                <a href="https://github.com/imsatyasaiteja/Visual-Crypto-Coding">
-                                    <img src="projects/vcc.png">
-                                </a>
-                            </div>
-                            <div id="box-5" class="proj-box">
-                                <a href="https://github.com/imsatyasaiteja/Simple-Linux-Shell">
-                                    <img src="projects/simple_linux_shell.png">
-                                </a>
-                            </div>
-                            <div id="box-6" class="proj-box">
-                                <a href="https://github.com/imsatyasaiteja/Cpu-Scheduling">
-                                    <img src="projects/cpu_scheduler.png">
-                                </a>
-                            </div>
-                            <div id="box-7" class="proj-box">
-                                <a href="https://imsatyasaiteja.github.io/Js_Memory_game/">
-                                    <img src="projects/js_memory_game.png">
-                                </a>
-                            </div>
-                            <div id="box-8" class="proj-box">
-                                <a href="https://imsatyasaiteja.github.io/Survey_form/">
-                                    <img src="projects/survey_form.png">
-                                </a>
-                            </div>
+                <div id="projects">
+                    <h2> Projects </h2>
+                    <hr>
+                    <!-- <p>Click on the images to Navigate to my projects</p> -->
+                    <br>
+                    <div id="boxes">
+                        <div id="box-1" class="proj-box">
+                            <a href="https://imsatyasaiteja.github.io/Tribute_page/" target="_blank">
+                                <img src="projects/tribute.png">
+                            </a>
+                        </div>
+                        <div id="box-2" class="proj-box">
+                            <a href="https://github.com/imsatyasaiteja/Attendance-Management-System" target="_blank">
+                                <img src="projects/ams_app.png">
+                            </a>
+                        </div>
+                        <div id="box-3" class="proj-box">
+                            <a href="https://github.com/imsatyasaiteja/Network_Science" target="_blank">
+                                <img src="projects/network_science.png">
+                            </a>
+                        </div>
+                        <div id="box-4" class="proj-box">
+                            <a href="https://github.com/imsatyasaiteja/Visual-Crypto-Coding" target="_blank">
+                                <img src="projects/vcc.png">
+                            </a>
+                        </div>
+                        <div id="box-5" class="proj-box">
+                            <a href="https://github.com/imsatyasaiteja/Simple-Linux-Shell" target="_blank">
+                                <img src="projects/simple_linux_shell.png">
+                            </a>
+                        </div>
+                        <div id="box-6" class="proj-box">
+                            <a href="https://github.com/imsatyasaiteja/Cpu-Scheduling" target="_blank">
+                                <img src="projects/cpu_scheduler.png">
+                            </a>
+                        </div>
+                        <div id="box-7" class="proj-box">
+                            <a href="https://imsatyasaiteja.github.io/Js_Memory_game/" target="_blank">
+                                <img src="projects/js_memory_game.png">
+                            </a>
+                        </div>
+                        <div id="box-8" class="proj-box">
+                            <a href="https://imsatyasaiteja.github.io/Survey_form/" target="_blank">
+                                <img src="projects/survey_form.png">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -184,13 +248,13 @@
                     <div id="contact">
                         <div class="contact-content">
                             <div class="contact-text">
-                                <h2> Connect </h2>
+                                <h2> Contact </h2>
                                 <div>
                                     <ul>
                                         <li>imsatyasaiteja@gmail.com</li>
                                         <li><a href="https://linkedin.com/in/imsatyasaiteja">LinkedIn</a></li>
                                         <li><a href="https://github.com/imsatyasaiteja">Github</a></li>
-                                        <li>+91 79898 99782</li>
+                                        <li style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: 525;">+91 79898 99782</li>
                                     </ul>
                                 </div>
                             </div>
@@ -199,16 +263,23 @@
                 </div>
             </section>
             
-            <section class="section-5">
-                <div class="last-box">
-                    <br><br>
-                    <div class="thanks-box">
-                        <h2><b><div class="thanks">Thanks for visiting!</div></b></h2>
+            <footer id="footer">
+                <div class="footer-box">
+                    <div>
+                        ©2024
+                        <b>TEJA MODALAVALASA</b>
+                        
                     </div>
+
+                    <div class="copyright"><b></b></div>
                 </div>
-            </section>
+            </footer>
+
         </form>
     </main>
+    
+    <div class="custom-cursor"></div>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 
 </html>
