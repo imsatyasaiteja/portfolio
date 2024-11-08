@@ -652,7 +652,7 @@
     .hero-image {
         flex: 0.3;
         text-align: center;
-        padding: 0 1.5rem;
+        padding: 0 3rem;
     }
 
     .hero-desc{
@@ -828,7 +828,7 @@
     }
 
     .hero-desc{
-        padding: 3rem;
+        padding: 3rem 1rem;
     }
 
     .circular {
