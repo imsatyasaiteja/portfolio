@@ -39,4 +39,14 @@ $(window).scroll(function () {
     $(".hero-box").css("opacity", 1 - scrollVar / 300);
 })
 
-
+// Timeline :
+function adjustLines(hoveredLine) {
+    let lines = document.querySelectorAll('.year-line');
+    lines.forEach(line => {
+        if (line === hoveredLine) {
+            line.style.flex = '1.2';
+        } else {
+            line.style.flex = '0.9';
+        }
+    });
+}
