@@ -4,318 +4,600 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Satya Sai Teja, a security analyst focused on cybersecurity, secure software, AI, and cloud technologies.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Portfolio</title>
+    <title>SST | Security Analyst</title>
 </head>
 
 <body>
-    <header id="header">
+    <header id="header" class="site-header">
         <div class="header-box">
-            <div class="logo">
-                <a href="https://imsatyasaiteja.github.io/portfolio/">
-                    <img id="header-img" src="images/logo_6.png">
-                </a>
-            </div>
+            <a class="brand" href="#top" aria-label="SST home">
+                <img id="header-img" src="images/SST_logo_black_no_bg.png" alt="SST logo">
+            </a>
 
-            <div>
-                <nav id="nav-bar">
-                    <a class="nav-link nav-link-transition" href="#aboutme">Hello, World!</a>
-                    <a class="nav-link" href="#skills">My Skills</a>
-                    <a class="nav-link" href="#projects">Projects</a>
-                    <a class="nav-link" href="#contact">Contact</a>
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"
+                aria-controls="nav-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-                    <div>
-                        <div class="toggle">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="more-link">
-                            <a href="#more" id="more-button">More</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+            <nav id="nav-bar" class="site-nav" aria-label="Primary navigation">
+                <a class="nav-link" href="#aboutme">WhoamI</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link nav-cta" href="https://github.com/imsatyasaiteja" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <form id="form">
+    <main id="top">
+        <a class="floating-github" href="https://github.com/imsatyasaiteja" target="_blank"
+            rel="noopener noreferrer" aria-label="Visit Satya Sai Teja on GitHub">
+            <img src="./images/cc_1.png" alt="" class="icon-board" aria-hidden="true">
+            <img src="./images/cc_2.png" alt="" class="icon-container" aria-hidden="true">
+            <img src="./images/cc_4.png" alt="" class="symbol" aria-hidden="true">
+        </a>
 
-            <div class="icon">
-                <a href="https://github.com/imsatyasaiteja" target="_blank">
-                    <img src="./images/cc_1.png" alt="icon" class="icon-board">
-                    <img src="./images/cc_2.png" alt="icon" class="icon-container">
-                    <img src="./images/cc_4.png" alt="icon" class="symbol">
-                </a>
+        <section class="hero" aria-labelledby="hero-title">
+            <canvas class="hero-network" aria-hidden="true"></canvas>
+            <div class="hero-box">
+                <div class="hero-copy">
+                    <h1 id="hero-title">Satya Sai Teja <span>Modalavalasa</span></h1>
+                    <p class="hero-summary">Security Analyst</p>
+                    <p class="hero-meta">M.Comp @ NUS | Ex-JRF @ DRDO </p>
+                    <div class="hero-actions" aria-label="Profile links">
+                        <a class="button primary" href="https://tryhackme.com/r/p/ColdCofyGuy" target="_blank"
+                            rel="noopener noreferrer">@ColdCofyGuy</a>
+                        <a class="button secondary" href="https://linkedin.com/in/imsatyasaiteja" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="hero-portrait" aria-label="Portrait of Satya Sai Teja">
+                    <img src="./images/SST_pic.png" alt="Satya Sai Teja" class="portrait">
+                </div>
             </div>
+        </section>
 
-            <section class="hero">
-                <div class="hero-box">
-                    <div class="hero-image">
-                        <img src="./images/teja_final.jpg" alt="Teja" class="circular">
-                    </div>
-                    <div class="hero-desc">
-                        <h1 class="hello">S. S. Teja Modalavalasa</h1>
-                        <div class="title">Jr. Penetration Tester</div>
-                        <div class="subtitle">Cryptography || Software, AI & Network Security</div>
-                        <div class="coldcofy">
-                            <a href="https://tryhackme.com/r/p/ColdCofyGuy" target="_blank"
-                                id="coldcofy-button">@ColdCofyGuy</a>
-                        </div>
-                    </div>
+        <section class="section about-section" id="aboutme" aria-labelledby="about-title">
+            <div class="section-box">
+                <div class="section-heading">
+                    <h2 id="about-title">About Me</h2>
                 </div>
-            </section>
 
-            <!-- <section>
-                <iframe src="timeline.html" style="width: 100%; height: 100vh; border: none"></iframe>
-            </section> -->
-
-            <section class="section-1">
-                <div class="section-box">
-                    <div id="aboutme">
-                        <div class="about-content">
-                            <div class="about-text">
-                                <h2>Hello, World!</h2>
-                                <p>
-                                    Hey Friend! Welcome to my corner of the internet.
-                                    <br><br>
-                                    I’m Teja, a Computer Science graduate from Jawaharlal Nehru University, New Delhi,
-                                    India. My journey so far has been a blend of
-                                    curiosity, cold coffee, and a fascination for how technology shapes our world -
-                                    especially in the field of cybersecurity.
-                                    <br><br>
-                                    Over the years, I’ve explored everything from Software Development to AI and Cloud
-                                    Computing. During my time as a Research
-                                    Assistant at the SC&SS Lab, I was introduced to Transformer-based AI. This
-                                    experience taught me not just the technical aspects
-                                    of deep learning but also how impactful technology can be when applied to real-world
-                                    problems.
-                                    <br><br>
-                                    As someone deeply intrigued by the rising threats in cyberspace, I’ve been honing my
-                                    skills with tools like Burp Suite,
-                                    Nmap Scanner, and Metasploit, while also developing secure software
-                                    applications. My goal? To fuse my software development
-                                    and AI expertise to tackle the cybersecurity challenges of tomorrow.
-                                    <br><br>
-                                    When I’m not debugging code or diving into the latest cybersecurity trends, you’ll
-                                    find me brainstorming over a cup of
-                                    cold coffee or recording my thoughts for my <i><b>ColdCofy Podcast</b></i>
-                                    <br><br>
-                                    Currently a Red Teamer! Wannabe Blue Teamer.
-                                    <br><br>
-                                    Take a look around, and if my journey resonates with you, let’s connect on <a
-                                        href="https://linkedin.com/in/imsatyasaiteja">LinkedIn</a>.
-                                    Who knows? We might just end up working on something exciting together!
-                                </p>
+                <div class="about-journey">
+                    <article class="about-entry about-entry--nus">
+                        <div class="about-logo" aria-hidden="true">
+                            <img src="images/nus-logo_2.jpg" alt="National University of Singapore">
+                        </div>
+                        <div class="about-copy">
+                            <div class="about-entry-heading">
+                                <h3>Applied Security Across the Stack</h3>
                             </div>
-                            <!-- <div class="timeline">
-                                <h2>Career Timeline</h2>
-                                <div class="timeline-box">
-                                    <div class="timeline-container">
-                                        <div class="big-dot"></div>
-                                        <div class="year-line" onmouseover="adjustLines(this)">
-                                            <div class="small-dot" style="left: 30%;"></div>
-                                            <div class="small-dot" style="right: 30%;"></div>
-                                        </div>
-                                        <div class="big-dot"></div>
-                                        <div class="year-line" onmouseover="adjustLines(this)">
-                                            <div class="small-dot" style="left: 30%;"></div>
-                                            <div class="small-dot" style="right: 30%;"></div>
-                                        </div>
-                                        <div class="big-dot"></div>
-                                        <div class="year-line" onmouseover="adjustLines(this)">
-                                            <div class="small-dot" style="left: 30%;"></div>
-                                            <div class="small-dot" style="right: 30%;"></div>
-                                        </div>
-                                        <div class="big-dot"></div>
-                                        <div class="year-line" onmouseover="adjustLines(this)">
-                                            <div class="small-dot" style="left: 30%;"></div>
-                                            <div class="small-dot" style="right: 30%;"></div>
-                                        </div>
-                                        <div class="big-dot"></div>
-                                        <div class="year-line" onmouseover="adjustLines(this)">
-                                            <div class="small-dot" style="left: 30%;"></div>
-                                            <div class="small-dot" style="right: 30%;"></div>
-                                        </div>
-                                        <div class="big-dot"></div>
-                                    </div>
+                            <p>
+                                During my time at NUS, I focused on applying security principles across the stack, connecting systems and network security with secure database storage techniques and cloud infrastructure.
+                                This experience changed my perspective on security, helping me see it as a deeper layer of software and systems design and understand how various layers of the stack interact and can be secured together.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="about-entry about-entry--reverse about-entry--drdo">
+                        <div class="about-logo" aria-hidden="true">
+                            <img src="images/drdo-logo.png" alt="">
+                        </div>
+                        <div class="about-copy">
+                            <div class="about-entry-heading">
+                                <h3>Mission-Critical Engineering at the Aeronautical Test Range</h3>
+                            </div>
+                            <p>
+                                As a Junior Research Fellow at the Defence R&D Organization (DRDO), Govt. of India, I worked on telemetry communication between Tapas and Nishant reconnaissance UAVs and the Ground Control Station.
+                                This involved configuring actuator parameters, troubleshooting issues, and monitoring communication during live flight trials at the Aeronautical Test Range.
+                                The experience shaped my understanding of how mission-critical systems need to be monitored, maintained, and documented to remain reliable in operational critical environments.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="about-entry about-entry--jnu">
+                        <div class="about-logo" aria-hidden="true">
+                            <img src="images/jnu-logo.jpg" alt="">
+                        </div>
+                        <div class="about-copy">
+                            <div class="about-entry-heading">
+                                <h3>Foundation in Computing and Applied AI</h3>
+                            </div>
+                            <p>
+                                JNU gave me a strong foundation in computing, particularly in software, systems, AI and analytical problem solving,
+                                while my research experience helped me apply these skills to create meaningful impact.
+                                I designed a Swin Transformer-based framework to predict MGMT promoter methylation status from brain tumour MRI scans, improving prior models' predictive accuracy by 18.3%.
+                                During this period, I also co-authored a research paper with my Professor, which has been selected for publication in Springer at the NTICT 2025 Conference.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+            <div class="section-box">
+                <div class="section-heading">
+                    <h2 id="projects-title">Projects</h2>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <a href="https://github.com/imsatyasaiteja/flowmart" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-body">
+                                <div class="project-copy">
+                                    <h3>FlowShield - WAF</h3>
+                                    <p>Application-layer bot traffic mitigation framework inspired by the research concept Stateless Information Flow Filter (SIFF).
+                                        Tested on FlowMart, a vulnerable e-commerce platform specifically designed to test FlowShield.
+                                        Enforced rate limiting through custom Lua scripts in Nginx reverse-proxy server to inspect and filter HTTP traffic before it reaches the application.</p>
                                 </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-2">
-                <div class="section-box">
-                    <div id="skills">
-                        <div class="skills-bg">
-                            <div>
-                                <h2>My Skills</h2>
-                            </div>
-                            <div class="skills-content">
-                                <div class="skills-text">
-                                    <div>
-                                        <div class="heading"><b>Programming Languages</b></div>
-                                        <br>
-                                        <li>C/C++, Java, Python</li>
-                                        <li>JavaScript, HTML, CSS</li>
-                                        <li>SQL, Bash Scripting</li>
-                                    </div>
-                                    <br><br>
-                                    <div>
-                                        <div class="heading"><b>Tools and Technologies</b></div>
-                                        <br>
-                                        <ul>Operating Systems</ul>
-                                        <li>Windows, Linux (Ubuntu/Kali)</li>
-                                        <br>
-                                        <ul>Security Tools</ul>
-                                        <li>Splunk, Elastic SIEM, Google Chronicle, IBM QRadar</li>
-                                        <li>Metasploit, Burp Suite, Nmap, tcpdump, Sqlmap </li>
-                                        <li>Netcat, Hydra, John-the-ripper, Hashcat, Peass-ng, Mimikatz </li>
-                                        <li>Wireshark, NS-3, HelmetJs, Cryptography (AES, RSA, DES)</li>
-                                        <li>OWASP Top 10, NIST SP 800-53, COBIT, ISO 2700</li>
-                                        <li>OSI Layers, TCP/IP Model, Subnetting, Firewall, VPN, IDS/IPS</li>
-                                        <br>
-                                        <ul>SDE Tools</ul>
-                                        <li>MySQL, MongoDB, PostgreSQL</li>
-                                        <li>Git/GitHub, GitLab, Bitbucket, Jupyter Notebook, Anaconda</li>
-                                        <li>Docker Containerization, AWS, Google Cloud Platform</li>
-                                        <li>VS Code, PyCharm, Eclipse, IntelliJ IDEA</li>
-                                        <li>Gen-AI, LLMs, RAGs, NLP, Prompt Engineering</li>
-                                    </div>
-                                    <br><br>
-                                    <div>
-                                        <div class="heading"><b>Libraries & Frameworks</b></div>
-                                        <br>
-                                        <li>Nodejs, Expressjs, Django, Flask</li>
-                                        <li>TensorFlow, PyTorch, Networkx, Javax.crypto</li>
-                                        <li>OpenCV, Cmake, Qmake, Makefile</li>
-                                    </div>
-                                </div>
-                                <div class="certs">
-                                    <div id="cert-box-1" class="cert-box">
-                                        <a href="https://coursera.org/share/58af1fc413b412ef2356823e68586f50"
-                                            target="_blank">
-                                            <img src="certs/Google_Cybersecurity_Professional_sq.jpg">
-                                        </a>
-                                    </div>
-                                    <div id="cert-box-2" class="cert-box">
-                                        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=2C0E4AE751D76D3438060772E81ED4CBCB14A6F56F9422083987540AFE53F83D"
-                                            target="_blank">
-                                            <img src="certs/OCI_Gen_AI_Professional_sq.jpg">
-                                        </a>
-                                    </div>
-                                    <div id="cert-box-3" class="cert-box">
-                                        <a href="https://freecodecamp.org/certification/imsatyasaiteja/javascript-algorithms-and-data-structures"
-                                            target="_blank">
-                                            <img src="certs/FCC_Js_Algo_Ds.png">
-                                        </a>
-                                    </div>
-                                    <div id="cert-box-4" class="cert-box">
-                                        <a href="https://freecodecamp.org/certification/imsatyasaiteja/responsive-web-design"
-                                            target="_blank">
-                                            <img src="certs/FCC_Web_Design.png">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-3">
-                <div id="projects">
-                    <h2> Projects </h2>
-                    <hr>
-                    <!-- <p>Click on the images to Navigate to my projects</p> -->
-                    <br>
-                    <div id="boxes">
-                        <div id="box-1" class="proj-box">
-                            <a href="https://imsatyasaiteja.github.io/Tribute_page/" target="_blank">
-                                <img src="projects/tribute_page.png">
-                            </a>
-                        </div>
-                        <div id="box-2" class="proj-box">
-                            <a href="https://github.com/imsatyasaiteja/Attendance-Management-System" target="_blank">
-                                <img src="projects/ams_app.png">
-                            </a>
-                        </div>
-                        <div id="box-3" class="proj-box">
-                            <a href="https://github.com/imsatyasaiteja/Network_Science" target="_blank">
-                                <img src="projects/network_science.png">
-                            </a>
-                        </div>
-                        <div id="box-4" class="proj-box">
-                            <a href="https://github.com/imsatyasaiteja/DVWA_Exploitation" target="_blank">
-                                <img src="projects/dvwa.png">
-                            </a>
-                        </div>
-                        <div id="box-5" class="proj-box">
-                            <a href="https://github.com/imsatyasaiteja/Simple-Linux-Shell" target="_blank">
-                                <img src="projects/simple_linux_shell.png">
-                            </a>
-                        </div>
-                        <div id="box-6" class="proj-box">
-                            <a href="https://github.com/imsatyasaiteja/Cpu-Scheduling" target="_blank">
-                                <img src="projects/cpu_scheduler.png">
-                            </a>
-                        </div>
-                        <div id="box-7" class="proj-box">
-                            <a href="https://github.com/imsatyasaiteja/Visual-Crypto-Coding" target="_blank">
-                                <img src="projects/vcc.png">
-                            </a>
-                        </div>
-                        <div id="box-8" class="proj-box">
-                            <a href="https://github.com/imsatyasaiteja/Android_Vulnerabilities" target="_blank">
-                                <img src="projects/andrioid_vulnerabilities.png">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-4">
-                <div class="section-box">
-                    <div id="contact">
-                        <div class="contact-content">
-                            <div>
-                                <h2> Contact </h2>
-                            </div>
-                            <div class="contact-text">
-                                <ul>
-                                    <li>imsatyasaiteja@gmail.com</li>
-                                    <li><a href="https://linkedin.com/in/imsatyasaiteja">LinkedIn</a></li>
-                                    <li><a href="https://github.com/imsatyasaiteja">Github</a></li>
+                                <img src="projects/FlowShield.png" alt="FlowShield project preview" loading="lazy">
+                                <ul class="project-legends" aria-label="FlowShield project scope and skills">
+                                    <li class="project-legend project-legend--team">Team Project</li>
+                                    <li class="project-legend project-skill">Python</li>
+                                    <li class="project-legend project-skill">JavaScript</li>
+                                    <li class="project-legend project-skill">Git/GitHub</li>
+                                    <li class="project-legend project-skill">NGINX Reverse Proxy</li>
+                                    <li class="project-legend project-skill">Lua</li>
+                                    <li class="project-legend project-skill">Redis</li>
+                                    <li class="project-legend project-skill">Docker</li>
+                                    <li class="project-legend project-skill">HTTP Traffic Analysis</li>
                                 </ul>
                             </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="https://github.com/imsatyasaiteja/BlueBox" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-body">
+                                <div class="project-copy">
+                                    <h3>BlueBox</h3>
+                                    <p>Tamper-evident cyber event recorder for connected aircraft systems. It generates aircraft network traffic, detects suspicious behavior,
+                                        stores evidence in a signed hash-chain logger, and gives analysts a dashboard for anomaly triage, forensic replay, provenance graph review, and Part-IS response guidance.</p>
+                                </div>
+                                <img src="projects/BlueBox.gif" alt="BlueBox project preview" loading="lazy">
+                                <ul class="project-legends" aria-label="BlueBox project scope and skills">
+                                    <li class="project-legend project-legend--team">Team Project</li>
+                                    <li class="project-legend project-skill">Python</li>
+                                    <li class="project-legend project-skill">JSON/YAML APIs</li>
+                                    <li class="project-legend project-skill">React 18</li>
+                                    <li class="project-legend project-skill">Tailwind CSS</li>
+                                    <li class="project-legend project-skill">SQLite</li>
+                                    <li class="project-legend project-skill">RSA Signatures</li>
+                                    <li class="project-legend project-skill">Hash Chaining</li>
+                                    <li class="project-legend project-skill">Merkle Trees</li>
+                                    <li class="project-legend project-skill">TPM Storage</li>
+                                    <li class="project-legend project-skill">Explainable AI</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="https://github.com/imsatyasaiteja/oracle_vpd_ols" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-body">
+                                <div class="project-copy">
+                                    <h3>Oracle VPD and OLS</h3>
+                                    <p>Defense-in-depth database security architecture for a Judicial Database Management System (JDMS) using Oracle Database 23ai.
+                                        The system combines Discretionary Access Control (DAC) via Oracle roles, Mandatory Access Control (MAC) via Oracle Label Security (OLS), and row-level filtering via Virtual Private Database (VPD).</p>
+                                </div>
+                                <img src="projects/oracle_vpd.png" alt="Oracle VPD and OLS project preview"
+                                    loading="lazy">
+                                <ul class="project-legends" aria-label="Oracle VPD and OLS project scope and skills">
+                                    <li class="project-legend project-legend--team">Team Project</li>
+                                    <li class="project-legend project-skill">PL/SQL</li>
+                                    <li class="project-legend project-skill">SSH Tunnelling</li>
+                                    <li class="project-legend project-skill">Oracle PDB</li>
+                                    <li class="project-legend project-skill">Least Privilege</li>
+                                    <li class="project-legend project-skill">Row-Level Security</li>
+                                    <li class="project-legend project-skill">Oracle VPD</li>
+                                    <li class="project-legend project-skill">OLS</li>
+                                    <li class="project-legend project-skill">MAC/DAC</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="https://github.com/imsatyasaiteja/ebpf-system-provenance" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-body">
+                                <div class="project-copy">
+                                    <h3>eBPF System Provenance</h3>
+                                    <p>eBPF-based forensic dashboard that captures kernel-level system activity, stores it in Elasticsearch, and applies advanced provenance analysis to reconstruct attack patterns from noisy logs.
+                                        Streamlit dashboard visualizes raw logs, statistics, and provenance graphs, while an Ollama LLM produces MITRE ATT&CK aligned summaries explaining the attack patterns.</p>
+                                </div>
+                                <img src="projects/ebpf_system_monitoring.png" alt="eBPF System Provenance project preview"
+                                    loading="lazy">
+                                <ul class="project-legends" aria-label="eBPF System Provenance project scope and skills">
+                                    <li class="project-legend project-legend--team">Team Project</li>
+                                    <li class="project-legend project-skill">Python</li>
+                                    <li class="project-legend project-skill">C</li>
+                                    <li class="project-legend project-skill">Elasticsearch</li>
+                                    <li class="project-legend project-skill">Linux Syscalls</li>
+                                    <li class="project-legend project-skill">auditd</li>
+                                    <li class="project-legend project-skill">eBPF</li>
+                                    <li class="project-legend project-skill">BCC</li>
+                                    <li class="project-legend project-skill">Streamlit</li>
+                                    <li class="project-legend project-skill">Ollama</li>
+                                    <li class="project-legend project-skill">JSONL</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="https://github.com/imsatyasaiteja/format_string_vuln_exploitation" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-body">
+                                <div class="project-copy">
+                                    <h3>Format String Exploitation</h3>
+                                    <p>A stack-based control-flow hijacking attack by exploiting a format-string vulnerability in a C program.
+                                    By abusing unsafe usage of snprintf() with attacker-controlled input, the exploit achieves arbitrary memory writes, overwrites a function’s return address,
+                                        and redirects execution to attacker-supplied shellcode resulting in interactive shell execution.</p>
+                                </div>
+                                <img src="projects/format_string_vuln_exploitation.png" alt="Format String Vulnerability Exploitation project preview" loading="lazy">
+                                <ul class="project-legends" aria-label="Format String Exploitation project scope and skills">
+                                    <li class="project-legend project-legend--individual">Personal Project</li>
+                                    <li class="project-legend project-skill">Reverse Engineering</li>
+                                    <li class="project-legend project-skill">GDB</li>
+                                    <li class="project-legend project-skill">Static/Dynamic Analysis</li>
+                                    <li class="project-legend project-skill">C</li>
+                                    <li class="project-legend project-skill">Shell Scripting</li>
+                                    <li class="project-legend project-skill">Assembly</li>
+                                    <li class="project-legend project-skill">ASLR</li>
+                                    <li class="project-legend project-skill">Stack Corruption</li>
+                                    <li class="project-legend project-skill">Exploit Payloads</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="https://github.com/imsatyasaiteja/Cpu-Scheduling" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-body">
+                                <div class="project-copy">
+                                    <h3>CPU Process Scheduler</h3>
+                                    <p>Operating systems simulator implementing CPU scheduling policies such as First-Come, First-Served (FCFS), Shortest Job Next (SJN), Round Robin (RR), and Completely Fair Scheduler (CFS).
+                                        It compares nice values, arrival time, burst time, turnaround time, time-slicing, and preemptive behavior of each algorithm using appropriate data structures.</p>
+                                </div>
+                                <img src="projects/cpu_scheduler.png" alt="CPU Process Scheduler project preview" loading="lazy">
+                                <ul class="project-legends" aria-label="CPU Process Scheduler project scope and skills">
+                                    <li class="project-legend project-legend--individual">Personal Project</li>
+                                    <li class="project-legend project-skill">C++</li>
+                                    <li class="project-legend project-skill">STL</li>
+                                    <li class="project-legend project-skill">Red-Black Tree</li>
+                                    <li class="project-legend project-skill">Round Robin</li>
+                                    <li class="project-legend project-skill">Min Heap</li>
+                                    <li class="project-legend project-skill">Dynamic Memory</li>
+                                    <li class="project-legend project-skill">CFS</li>
+                                    <li class="project-legend project-skill">Time Slicing</li>
+                                    <li class="project-legend project-skill">Turnaround Time</li>
+                                    <li class="project-legend project-skill">Static Priority</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="https://github.com/imsatyasaiteja/DVWA_Exploitation" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-body">
+                                <div class="project-copy">
+                                    <h3>DVWA Exploitation</h3>
+                                    <p>Practical web application security testing on Damn Vulnerable Web Application (DVWA), covering OWASP Top attacks such as SQL injection, command injection, JavaScript attacks, file upload vulnerabilities, and weak session management.
+                                        Leveraged tools such as Burp Suite, SQLmap, and Nmap for reconnaissance, exploitation, and validation.</p>
+                                </div>
+                                <img src="projects/dvwa.png" alt="DVWA Exploitation project preview" loading="lazy">
+                                <ul class="project-legends" aria-label="DVWA Exploitation project scope and skills">
+                                    <li class="project-legend project-legend--individual">Personal Project</li>
+                                    <li class="project-legend project-skill">Kali Linux</li>
+                                    <li class="project-legend project-skill">Apache</li>
+                                    <li class="project-legend project-skill">PHP</li>
+                                    <li class="project-legend project-skill">MariaDB</li>
+                                    <li class="project-legend project-skill">Burp Suite</li>
+                                    <li class="project-legend project-skill">SQLmap</li>
+                                    <li class="project-legend project-skill">Nmap</li>
+                                    <li class="project-legend project-skill">OWASP ZAP</li>
+                                    <li class="project-legend project-skill">SQL Injection</li>
+                                    <li class="project-legend project-skill">XSS</li>
+                                    <li class="project-legend project-skill">Weak Session IDs</li>
+                                    <li class="project-legend project-skill">Command Injection</li>
+                                    <li class="project-legend project-skill">File Upload</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="https://github.com/imsatyasaiteja" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-body">
+                                <div class="project-copy">
+                                    <h3>Dirty Pipe Vulnerability Research</h3>
+                                    <p>Researched Dirty Pipe/CVE-2022-0847, a Linux kernel local privilege escalation vulnerability caused by improper pipe buffer flag initialization.
+                                        Analyzed its root cause, affected kernel behavior, security impact, and mitigation strategies to understand how kernel-level memory handling flaws compromise system integrity.</p>
+                                </div>
+                                <img src="projects/andrioid_vulnerabilities.png"
+                                    alt="Android Vulnerabilities project preview" loading="lazy">
+                                <ul class="project-legends" aria-label="Dirty Pipe Vulnerability Research project scope and skills">
+                                    <li class="project-legend project-legend--individual">Personal Project</li>
+                                    <li class="project-legend project-skill">CVE-2022-0847</li>
+                                    <li class="project-legend project-skill">Linux Kernel</li>
+                                    <li class="project-legend project-skill">Pipe Buffer Flags</li>
+                                    <li class="project-legend project-skill">PIPE_BUF_FLAG_CAN_MERGE</li>
+                                    <li class="project-legend project-skill">splice()</li>
+                                    <li class="project-legend project-skill">Privilege Escalation</li>
+                                    <li class="project-legend project-skill">/etc/passwd</li>
+                                    <li class="project-legend project-skill">Docker Security</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+            <div class="section-box">
+                <div class="section-heading">
+                    <h2 id="skills-title">Skills & Certifications</h2>
+                </div>
+
+                <div class="certifications-grid" aria-label="Professional certifications">
+                    <article class="certification-card certificate-trigger" role="button" tabindex="0"
+                        aria-describedby="ceh-cert-skills"
+                        data-certificate-src="certs/CEH.png"
+                        data-certificate-title="Certified Ethical Hacker (CEH)">
+                        <div class="certification-header">
+                            <h3>Certified Ethical Hacker (CEH)</h3>
+                            <img class="certification-logo certification-logo--ec" src="certs/ECC.png"
+                                alt="EC-Council logo" loading="lazy">
                         </div>
+                        <ul id="ceh-cert-skills" class="certification-legends">
+                            <li>Reconnaissance</li>
+                            <li>Scanning</li>
+                            <li>Enumeration</li>
+                            <li>Vulnerability Analysis</li>
+                            <li>System Hacking</li>
+                            <li>Web Attacks</li>
+                            <li>Social Engineering</li>
+                            <li>Wireless Security</li>
+                            <li>Defensive Countermeasures</li>
+                        </ul>
+                    </article>
+
+                    <article class="certification-card certificate-trigger" role="button" tabindex="0"
+                        aria-describedby="tryhackme-cert-skills"
+                        data-certificate-src="certs/THM_Jr_Pen_Tester.png"
+                        data-certificate-title="Junior Penetration Tester">
+                        <div class="certification-header">
+                            <h3>Junior Penetration Tester</h3>
+                            <img class="certification-logo" src="certs/THM.jpg" alt="TryHackMe logo" loading="lazy">
+                        </div>
+                        <ul id="tryhackme-cert-skills" class="certification-legends">
+                            <li>Reconnaissance</li>
+                            <li>Enumeration</li>
+                            <li>Web App Testing</li>
+                            <li>Network Exploitation</li>
+                            <li>Password Attacks</li>
+                            <li>Privilege Escalation</li>
+                            <li>Reporting</li>
+                        </ul>
+                    </article>
+
+                    <article class="certification-card certificate-trigger" role="button" tabindex="0"
+                        aria-describedby="google-cert-skills"
+                        data-certificate-src="certs/Google_Cybersecurity_Professional.jpg"
+                        data-certificate-title="Google Cybersecurity Professional Certificate">
+                        <div class="certification-header">
+                            <h3>Google Cybersecurity Professional</h3>
+                            <img class="certification-logo" src="certs/GCP.jpg" alt="Google logo" loading="lazy">
+                        </div>
+                        <ul id="google-cert-skills" class="certification-legends">
+                            <li>Security Operations</li>
+                            <li>Linux</li>
+                            <li>SQL</li>
+                            <li>Network Analysis</li>
+                            <li>SIEM Detection</li>
+                            <li>Vulnerability Management</li>
+                            <li>Incident Response</li>
+                            <li>Risk Assessment</li>
+                        </ul>
+                    </article>
+
+                    <article class="certification-card certificate-trigger" role="button" tabindex="0"
+                        aria-describedby="oracle-cert-skills"
+                        data-certificate-src="certs/OCI_Gen_AI_Professional.jpg"
+                        data-certificate-title="OCI Generative AI Professional">
+                        <div class="certification-header">
+                            <h3>OCI Generative AI Professional</h3>
+                            <img class="certification-logo" src="certs/OCI.jpg" alt="Oracle logo" loading="lazy">
+                        </div>
+                        <ul id="oracle-cert-skills" class="certification-legends">
+                            <li>LLM Architecture</li>
+                            <li>OCI GenAI</li>
+                            <li>Prompt Engineering</li>
+                            <li>Embeddings</li>
+                            <li>Vector Search</li>
+                            <li>RAG</li>
+                            <li>Fine-Tuning</li>
+                            <li>Responsible AI</li>
+                        </ul>
+                    </article>
+
+                    <article class="certification-card certificate-trigger" role="button" tabindex="0"
+                        aria-describedby="javascript-cert-skills"
+                        data-certificate-src="certs/FCC_Js_Algo_Ds.png"
+                        data-certificate-title="JavaScript Algorithms and Data Structures">
+                        <div class="certification-header">
+                            <h3>JavaScript Algorithms and Data Structures</h3>
+                            <img class="certification-logo" src="certs/FCC.jpg" alt="freeCodeCamp logo" loading="lazy">
+                        </div>
+                        <ul id="javascript-cert-skills" class="certification-legends">
+                            <li>JavaScript</li>
+                            <li>ES6</li>
+                            <li>Algorithms</li>
+                            <li>Data Structures</li>
+                            <li>Regex</li>
+                            <li>Debugging</li>
+                            <li>Functional Programming</li>
+                            <li>OOP</li>
+                        </ul>
+                    </article>
+
+                    <article class="certification-card certificate-trigger" role="button" tabindex="0"
+                        aria-describedby="web-design-cert-skills"
+                        data-certificate-src="certs/FCC_Web_Design.png"
+                        data-certificate-title="Responsive Web Design">
+                        <div class="certification-header">
+                            <h3>Responsive Web Design</h3>
+                            <img class="certification-logo" src="certs/FCC.jpg" alt="freeCodeCamp logo" loading="lazy">
+                        </div>
+                        <ul id="web-design-cert-skills" class="certification-legends">
+                            <li>Semantic HTML</li>
+                            <li>CSS</li>
+                            <li>Flexbox</li>
+                            <li>CSS Grid</li>
+                            <li>Media Queries</li>
+                            <li>Accessibility</li>
+                            <li>Responsive UI</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="section-box contact-box">
+                <div class="section-heading">
+                    <h2 id="contact-title">Contact</h2>
+                    <p class="contact-intro">
+                        Reach out for security projects, research collaboration, or technical conversations. I usually
+                        respond fastest over email, LinkedIn, or Telegram.
+                    </p>
+                </div>
+
+                <div class="contact-content">
+                    <a class="contact-card contact-card--primary" href="mailto:imsatyasaiteja@gmail.com"
+                        aria-label="Email Satya Sai Teja">
+                        <span class="contact-icon">
+                            <img src="contact/gmail_logo.svg" alt="" loading="lazy">
+                        </span>
+                        <span class="contact-text">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-handle">imsatyasaiteja@gmail.com</span>
+                        </span>
+                    </a>
+
+                    <a class="contact-card" href="https://linkedin.com/in/imsatyasaiteja" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <span class="contact-icon">
+                            <img src="contact/linkedin_logo.png" alt="" loading="lazy">
+                        </span>
+                        <span class="contact-text">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-handle">@imsatyasaiteja</span>
+                        </span>
+                    </a>
+
+                    <a class="contact-card" href="https://github.com/imsatyasaiteja" target="_blank"
+                        rel="noopener noreferrer" aria-label="GitHub profile">
+                        <span class="contact-icon">
+                            <img src="contact/github_logo.svg" alt="" loading="lazy">
+                        </span>
+                        <span class="contact-text">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-handle">@imsatyasaiteja</span>
+                        </span>
+                    </a>
+
+                    <a class="contact-card" href="https://x.com/imsatyasaiteja" target="_blank"
+                        rel="noopener noreferrer" aria-label="Twitter profile">
+                        <span class="contact-icon">
+                            <img src="contact/twitter_logo.png" alt="" loading="lazy">
+                        </span>
+                        <span class="contact-text">
+                            <span class="contact-label">Twitter / X</span>
+                            <span class="contact-handle">@imsatyasaiteja</span>
+                        </span>
+                    </a>
+
+                    <a class="contact-card" href="https://www.instagram.com/imsatyasaiteja/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram profile">
+                        <span class="contact-icon">
+                            <img src="contact/instagram_logo.png" alt="" loading="lazy">
+                        </span>
+                        <span class="contact-text">
+                            <span class="contact-label">Instagram</span>
+                            <span class="contact-handle">@imsatyasaiteja</span>
+                        </span>
+                    </a>
+
+                    <a class="contact-card" href="https://t.me/imsatyasaiteja_sg" target="_blank"
+                        rel="noopener noreferrer" aria-label="Telegram profile">
+                        <span class="contact-icon">
+                            <img src="contact/telegram_logo.png" alt="" loading="lazy">
+                        </span>
+                        <span class="contact-text">
+                            <span class="contact-label">Telegram</span>
+                            <span class="contact-handle">@imsatyasaiteja_sg</span>
+                        </span>
+                    </a>
+
+                    <div class="contact-card contact-card--static" aria-label="Discord username">
+                        <span class="contact-icon">
+                            <img src="contact/discord.jpg" alt="" loading="lazy">
+                        </span>
+                        <span class="contact-text">
+                            <span class="contact-label">Discord</span>
+                            <span class="contact-handle">@imsatyasaiteja</span>
+                        </span>
                     </div>
                 </div>
-            </section>
-
-            <footer id="footer">
-                <div class="footer-box">
-                    <div class="credit">
-                        <b>TEJA</b>
-                    </div>
-                    <div class="copyright">
-                        <b>© 2025</b>
-                    </div>
-                </div>
-            </footer>
-
-        </form>
+            </div>
+        </section>
     </main>
 
-    <div class="custom-cursor"></div>
-    <script type="text/javascript" src="scripts.js"></script>
+    <div class="certificate-modal" id="certificate-modal" hidden>
+        <div class="certificate-modal-backdrop" data-certificate-close></div>
+        <div class="certificate-modal-dialog" role="dialog" aria-modal="true"
+            aria-labelledby="certificate-modal-title">
+            <h2 class="visually-hidden" id="certificate-modal-title">Certificate preview</h2>
+            <button class="certificate-modal-close" type="button" aria-label="Close certificate preview"
+                data-certificate-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <img id="certificate-modal-image" alt="">
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-box">
+            <a class="brand" href="#top" aria-label="SST home">
+                <img id="header-img" src="images/SST_logo_black_no_bg.png" alt="SST logo">
+            </a>
+            <span>&copy; <span data-year>2026</span></span>
+        </div>
+    </footer>
+
+    <div class="custom-cursor" aria-hidden="true"></div>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
