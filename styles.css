@@ -113,7 +113,7 @@ main {
     white-space: nowrap;
 }
 
-#header-img {
+.site-logo {
     width: auto;
     height: 1.5rem;
 }
@@ -125,6 +125,9 @@ main {
 }
 
 .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 999px;
     color: var(--text);
     font-size: 0.88rem;
@@ -133,6 +136,10 @@ main {
     padding: 0.65rem 1.2rem;
     text-decoration: none;
     transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.nav-icon {
+    display: none;
 }
 
 .nav-link:hover {
@@ -200,7 +207,8 @@ main {
     min-height: clamp(430px, 70vh, 620px);
     display: flex;
     align-items: center;
-    animation: myanimation 45s linear infinite;
+    background-color: #d6f6ff;
+    animation: heroColorCycle 54s ease-in-out infinite;
     box-shadow: 0 2px 4px rgba(216, 216, 216, 0.12);
 }
 
@@ -210,7 +218,7 @@ main {
     z-index: 1;
     width: 100%;
     height: 100%;
-    opacity: 0.96;
+    opacity: 1;
     pointer-events: none;
 }
 
@@ -246,16 +254,6 @@ main {
     text-align: left;
 }
 
-.eyebrow {
-    color: rgba(22, 22, 22, 0.72);
-    font-size: 0.78rem;
-    font-weight: 900;
-    letter-spacing: 0;
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-    text-transform: uppercase;
-}
-
 h1,
 h2,
 h3 {
@@ -267,12 +265,20 @@ h3 {
 h1 {
     font-size: clamp(2.25rem, 4vw, 2.7rem);
     font-weight: 900;
-    line-height: 1.18;
+    line-height: 1.12;
     margin-bottom: 1rem;
 }
 
-h1 span {
-    display: block;
+.hero-name {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.hero-name-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.45rem 0.85rem;
 }
 
 h2 {
@@ -358,10 +364,43 @@ h3 {
 }
 
 .about-section {
-    background: linear-gradient(135deg, #f4ffff 0%, #f7fff1 32%, #fffbee 64%, #fff3fb 100%);
+    --about-card-radius: 1.35rem;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 14% 14%, rgba(116, 203, 255, 0.16) 0, rgba(116, 203, 255, 0) 30%),
+        radial-gradient(circle at 86% 18%, rgba(140, 230, 179, 0.18) 0, rgba(140, 230, 179, 0) 28%),
+        radial-gradient(circle at 78% 88%, rgba(255, 186, 132, 0.16) 0, rgba(255, 186, 132, 0) 31%),
+        linear-gradient(180deg, #f8fcff 0%, #f8fff8 48%, #fffaf5 100%);
+}
+
+.about-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(30, 41, 59, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 41, 59, 0.035) 1px, transparent 1px);
+    background-size: 42px 42px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+}
+
+.about-section::after {
+    content: "";
+    position: absolute;
+    inset: auto -8rem -10rem auto;
+    width: 26rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(188, 172, 255, 0.16), rgba(188, 172, 255, 0));
+    pointer-events: none;
 }
 
 .about-section .section-box {
+    position: relative;
+    z-index: 1;
     width: min(66rem, calc(100% - 5rem));
 }
 
@@ -371,11 +410,61 @@ h3 {
     text-align: left;
 }
 
-.about-journey {
-    display: grid;
-    gap: 1.25rem;
+.about-motto {
+    max-width: none;
+    margin: 0;
+    padding: clamp(1.15rem, 2.4vw, 1.55rem) clamp(1.15rem, 3vw, 1.65rem);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: calc(var(--about-card-radius) - 0.35rem);
+    background: linear-gradient(135deg, rgba(248, 252, 255, 0.96), rgba(250, 255, 248, 0.96));
+    box-shadow: none;
+}
+
+.about-motto h4 {
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.35;
+    margin: 0 0 0.55rem;
+}
+
+.about-motto p {
+    color: rgba(22, 22, 22, 0.76);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.72;
+    margin: 0;
+    text-wrap: pretty;
+}
+
+.about-story-card {
     max-width: 62rem;
     margin-inline: auto;
+    padding: clamp(1.4rem, 3vw, 2.1rem) clamp(1.4rem, 4vw, 2.5rem);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: var(--about-card-radius);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+}
+
+.about-story-intro {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 1.75;
+    margin: 0;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    text-align: justify;
+    text-align-last: left;
+    text-wrap: pretty;
+}
+
+.about-journey {
+    display: grid;
+    gap: 0;
+    max-width: none;
+    margin: 0 0 1.25rem;
 }
 
 .about-entry {
@@ -385,17 +474,18 @@ h3 {
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: center;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    border-radius: 5rem;
-    background: #ffffff;
-    box-shadow: 0 16px 38px rgba(55, 55, 55, 0.09);
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    transition: box-shadow 220ms ease, transform 220ms ease;
+    border-radius: 0;
+    background: transparent;
+    padding: clamp(1.35rem, 3.5vw, 2.35rem) 0;
 }
 
 .about-entry:hover {
-    box-shadow: 0 20px 44px rgba(55, 55, 55, 0.13);
-    transform: translateY(-2px);
+    box-shadow: none;
+    transform: none;
+}
+
+.about-entry + .about-entry {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .about-entry--reverse {
@@ -434,11 +524,8 @@ h3 {
 .about-entry--nus .about-logo img {
     position: absolute;
     top: 8%;
-    /* left: 18%; */
-    /* width: auto; */
     max-width: none;
     height: 84%;
-    /* clip-path: inset(0 87% 0 0); */
 }
 
 .about-copy {
@@ -453,16 +540,6 @@ h3 {
     font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
-.about-label {
-    color: #6b6b6b;
-    font-size: 0.66rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    line-height: 1.35;
-    margin-bottom: 0.35rem;
-    text-transform: uppercase;
-}
-
 .about-entry p,
 .project-body p {
     color: var(--muted);
@@ -473,109 +550,118 @@ h3 {
     hyphens: auto;
 }
 
-.skills-section {
-    background: #ffffff;
+.certifications-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(101, 196, 255, 0.14) 0, rgba(101, 196, 255, 0) 31%),
+        radial-gradient(circle at 88% 12%, rgba(141, 233, 188, 0.16) 0, rgba(141, 233, 188, 0) 28%),
+        radial-gradient(circle at 86% 88%, rgba(255, 193, 137, 0.13) 0, rgba(255, 193, 137, 0) 30%),
+        linear-gradient(180deg, #fbfdff 0%, #f7fbff 46%, #fffaf6 100%);
 }
 
-.skills-section .section-box {
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 22px;
-    animation: myanimation 45s linear infinite;
+.certifications-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.032) 1px, transparent 1px);
+    background-size: 46px 46px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 86%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 86%, transparent 100%);
+}
+
+.certifications-section .section-box {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.1);
     padding: clamp(1.5rem, 4vw, 3rem);
 }
 
-.skills-section .section-heading {
-    max-width: 48rem;
+.certifications-section .section-heading {
+    max-width: none;
 }
 
-.section-intro {
-    max-width: 43rem;
-    color: var(--muted);
-    font-size: 0.86rem;
-    line-height: 1.7;
+.certifications-layout {
+    max-width: none;
+    margin-inline: auto;
 }
 
-.certifications-grid {
+.certifications-panel {
+    padding: 0;
+}
+
+.certifications-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1.1rem, 2vw, 1.5rem);
+    grid-template-columns: repeat(2, minmax(21rem, 1fr));
+    gap: clamp(0.85rem, 1.8vw, 1.15rem);
 }
 
 .certification-card {
     position: relative;
     display: grid;
-    min-height: 10.5rem;
-    grid-template-rows: auto 1fr;
-    gap: 0.95rem;
+    min-height: 4.9rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
     border: 1px solid rgba(22, 22, 22, 0.08);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 10px 28px rgba(35, 35, 35, 0.08);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 255, 0.94));
+    box-shadow: 0 10px 26px rgba(35, 35, 35, 0.07);
     cursor: pointer;
-    padding: clamp(1.15rem, 1.9vw, 1.55rem);
+    padding: 0.85rem 0.95rem 0.85rem 1rem;
     transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .certification-card:hover {
-    border-color: rgba(140, 82, 255, 0.24);
-    box-shadow: 0 18px 38px rgba(35, 35, 35, 0.12);
-    transform: translateY(-3px);
+    border-color: rgba(45, 124, 255, 0.2);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.11);
+    transform: translateY(-2px);
 }
 
 .certification-card:focus-visible {
-    border-color: rgba(140, 82, 255, 0.38);
-    box-shadow: 0 0 0 4px rgba(140, 82, 255, 0.14), 0 18px 38px rgba(35, 35, 35, 0.12);
+    border-color: rgba(45, 124, 255, 0.38);
+    box-shadow: 0 0 0 4px rgba(45, 124, 255, 0.12), 0 16px 34px rgba(15, 23, 42, 0.11);
     outline: 0;
 }
 
-.certification-header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 1rem;
-    align-items: start;
+.certification-info {
+    min-width: 0;
 }
 
-.certification-header h3 {
-    font-size: clamp(0.98rem, 1.45vw, 1.12rem);
+.certification-provider {
+    display: block;
+    color: #667085;
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.09em;
+    line-height: 1.25;
+    margin-bottom: 0.28rem;
+    text-transform: uppercase;
+}
+
+.certification-card h3 {
+    font-size: clamp(0.88rem, 0.98vw, 0.96rem);
     line-height: 1.35;
+    margin: 0;
 }
 
 .certification-logo {
     display: block;
-    width: 2.65rem;
-    height: 2.65rem;
+    width: 3.35rem;
+    height: 3.35rem;
     flex: 0 0 auto;
     border: 1px solid rgba(22, 22, 22, 0.1);
     border-radius: 50%;
     background: #ffffff;
     box-shadow: 0 8px 18px rgba(35, 35, 35, 0.08);
     object-fit: contain;
-    padding: 0.22rem;
-}
-
-.certification-legends {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: start;
-    gap: 0.42rem;
-    list-style: none;
-    border-top: 1px solid rgba(22, 22, 22, 0.07);
-    padding-top: 0.8rem;
-}
-
-.certification-legends li {
-    display: inline-flex;
-    align-items: center;
-    min-height: 1.65rem;
-    border: 1px solid rgba(22, 22, 22, 0.08);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.72);
-    color: #494949;
-    font-size: 0.58rem;
-    font-weight: 800;
-    letter-spacing: 0.01em;
-    line-height: 1.2;
-    padding: 0.3rem 0.5rem;
+    padding: 0.32rem;
 }
 
 .certificate-modal[hidden] {
@@ -686,9 +772,9 @@ h3 {
     grid-area: image;
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 19 / 10;
     border: 1px solid rgba(22, 22, 22, 0.08);
-    border-radius: 14px;
+    border-radius: 9px;
     background: #f7f7f7;
     object-fit: cover;
     transition: opacity 180ms ease, transform 180ms ease;
@@ -702,11 +788,11 @@ h3 {
 .project-body {
     display: grid;
     height: 100%;
-    grid-template-columns: minmax(0, 1fr) clamp(12.5rem, 36%, 16rem);
+    grid-template-columns: minmax(0, 1fr) clamp(15rem, 43%, 19.5rem);
     grid-template-areas:
         "copy image"
         "legends legends";
-    gap: 0.95rem 1.15rem;
+    gap: 0.95rem 1.35rem;
     align-items: start;
     padding: clamp(1.15rem, 1.9vw, 1.55rem);
 }
@@ -775,7 +861,7 @@ h3 {
 .contact-section {
     background:
         linear-gradient(135deg, rgba(13, 20, 38, 0.68), rgba(36, 21, 82, 0.38)),
-        url("images/(6).jpg") center / cover;
+        url("images/contact-bg.jpg") center / cover;
 }
 
 .contact-box {
@@ -791,8 +877,7 @@ h3 {
     text-shadow: 0 2px 18px rgba(0, 0, 0, 0.22);
 }
 
-.contact-section .section-heading h2,
-.contact-section .section-heading .eyebrow {
+.contact-section .section-heading h2 {
     color: #ffffff;
 }
 
@@ -991,6 +1076,14 @@ h3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .project-body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "copy"
+            "image"
+            "legends";
+    }
+
 }
 
 @media (max-width: 860px) {
@@ -1015,20 +1108,21 @@ h3 {
 
     .site-nav {
         position: fixed;
-        inset: var(--header-height) var(--page-gutter) auto var(--page-gutter);
+        inset: calc(var(--header-height) + 0.75rem) var(--page-gutter) auto auto;
         display: grid;
-        gap: 0.5rem;
-        max-height: calc(100vh - var(--header-height) - 1rem);
-        overflow: auto;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.96);
-        box-shadow: var(--shadow);
-        padding: 0.75rem;
+        gap: 0.55rem;
+        width: max-content;
+        max-height: none;
+        overflow: visible;
+        border: 0;
+        border-radius: 18px;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
-        transform: translateY(-0.75rem);
+        transform: translateX(0.75rem) scale(0.96);
         transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
     }
 
@@ -1036,16 +1130,88 @@ h3 {
         opacity: 1;
         pointer-events: auto;
         visibility: visible;
-        transform: translateY(0);
+        transform: translateX(0) scale(1);
     }
 
     .nav-link,
     .nav-cta {
-        width: 100%;
+        width: 3.15rem;
+        height: 3.15rem;
         margin-left: 0;
-        border-radius: 10px;
-        padding: 1rem;
+        border: 1px solid rgba(15, 23, 42, 0.12);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+        color: var(--text);
+        font-size: 0.92rem;
+        padding: 0;
         text-align: center;
+        opacity: 0;
+        transform: translateX(0.55rem) scale(0.94);
+        transition: opacity 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+        background: #ffffff;
+        box-shadow: 0 16px 34px rgba(15, 23, 42, 0.18);
+        transform: translateX(0) translateY(-1px) scale(1.02);
+    }
+
+    .nav-cta {
+        background: rgba(255, 255, 255, 0.96);
+        color: var(--text);
+    }
+
+    .nav-cta:hover,
+    .nav-cta:focus-visible {
+        background: #ffffff;
+        color: var(--text);
+    }
+
+    .site-nav.is-open .nav-link {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+    .site-nav.is-open .nav-link:nth-child(2) {
+        transition-delay: 25ms;
+    }
+
+    .site-nav.is-open .nav-link:nth-child(3) {
+        transition-delay: 50ms;
+    }
+
+    .site-nav.is-open .nav-link:nth-child(4) {
+        transition-delay: 75ms;
+    }
+
+    .site-nav.is-open .nav-link:nth-child(5) {
+        transition-delay: 100ms;
+    }
+
+    .nav-icon {
+        display: inline-grid;
+        place-items: center;
+        width: 1.82rem;
+        height: 1.82rem;
+    }
+
+    .nav-icon img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .nav-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
     }
 
     .hero {
@@ -1074,6 +1240,15 @@ h3 {
         font-size: 2.05rem;
         line-height: 1.18;
         margin-bottom: 0.8rem;
+    }
+
+    .hero-name {
+        justify-items: center;
+        gap: 0.4rem;
+    }
+
+    .hero-name-line {
+        justify-content: center;
     }
 
     h2 {
@@ -1118,14 +1293,14 @@ h3 {
         max-width: 38rem;
     }
 
-    .certifications-grid {
+    .certifications-list {
         grid-template-columns: 1fr;
     }
 
     .certification-logo {
-        width: 2.45rem;
-        height: 2.45rem;
-        padding: 0.2rem;
+        width: 3.15rem;
+        height: 3.15rem;
+        padding: 0.3rem;
     }
 
     .about-section .section-box {
@@ -1135,6 +1310,10 @@ h3 {
 
     .about-section .section-heading {
         margin-bottom: 1.5rem;
+    }
+
+    .about-motto {
+        margin: 0;
     }
 
     .project-grid {
@@ -1151,7 +1330,7 @@ h3 {
     }
 
     .project-card img {
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 19 / 10;
     }
 
     .contact-section .section-heading {
@@ -1166,6 +1345,10 @@ h3 {
         --section-y: 3.25rem;
     }
 
+    .about-section {
+        --about-card-radius: 18px;
+    }
+
     .header-box,
     .hero-box,
     .section-box,
@@ -1174,11 +1357,7 @@ h3 {
         max-width: 34rem;
     }
 
-    .brand span {
-        display: none;
-    }
-
-    #header-img {
+    .site-logo {
         height: 1.2rem;
     }
 
@@ -1201,6 +1380,14 @@ h3 {
         font-size: 1.72rem;
         line-height: 1.2;
         margin-bottom: 0.65rem;
+    }
+
+    .hero-name {
+        gap: 0.36rem;
+    }
+
+    .hero-name-line {
+        gap: 0.28rem 0.55rem;
     }
 
     h2 {
@@ -1242,21 +1429,25 @@ h3 {
         overflow-wrap: anywhere;
     }
 
-    .skills-section .section-box {
-        padding: 1.15rem;
+    .certifications-section .section-box {
+        padding: 1.5rem;
+    }
+
+    .certifications-panel {
+        padding: 0;
     }
 
     .project-body,
     .contact-content {
-        padding: 1.35rem;
+        padding: 1.65rem;
     }
 
     .section-heading {
         margin-bottom: 1.4rem;
     }
 
-    .section-intro,
     .contact-intro,
+    .about-story-intro,
     .about-entry p,
     .project-body p {
         font-size: 0.82rem;
@@ -1268,13 +1459,17 @@ h3 {
         border-radius: 18px;
     }
 
+    .contact-section .section-heading {
+        padding-inline: 0.35rem;
+    }
+
     .contact-card--primary {
         grid-column: auto;
     }
 
     .contact-card {
         min-height: 4.1rem;
-        padding: 0.95rem;
+        padding: 1.05rem;
     }
 
     .contact-icon {
@@ -1289,6 +1484,7 @@ h3 {
     }
 
     .about-journey,
+    .about-story-card,
     .about-entry,
     .certification-card,
     .project-card,
@@ -1299,10 +1495,11 @@ h3 {
 
     .about-copy,
     .project-copy,
-    .certification-header h3,
-    .section-intro,
+    .certification-info,
+    .certification-card h3,
     .contact-intro,
     .contact-handle,
+    .about-story-intro,
     .about-entry p,
     .project-body p {
         min-width: 0;
@@ -1313,6 +1510,34 @@ h3 {
         text-align: center;
     }
 
+    .about-motto {
+        margin: 0;
+        padding: 1.35rem;
+        border-radius: var(--about-card-radius);
+    }
+
+    .about-motto h4 {
+        font-size: 0.92rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .about-motto p {
+        font-size: 0.8rem;
+        line-height: 1.65;
+    }
+
+    .about-story-card {
+        padding: 1.6rem;
+    }
+
+    .about-story-intro {
+        padding-bottom: 1.25rem;
+    }
+
+    .about-journey {
+        margin-bottom: 1.1rem;
+    }
+
     .about-entry,
     .about-entry--reverse {
         grid-template-columns: minmax(0, 1fr) 3.35rem;
@@ -1321,8 +1546,8 @@ h3 {
             "text text";
         gap: 1rem 0.9rem;
         align-items: start;
-        border-radius: 18px;
-        padding: 1.45rem;
+        border-radius: 0;
+        padding: 1.45rem 0;
         transform: none;
     }
 
@@ -1372,10 +1597,11 @@ h3 {
 
     .certification-card {
         min-height: 0;
-        padding: 1.2rem;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.8rem;
+        padding: 1rem 1.05rem;
     }
 
-    .certification-legends li,
     .project-legend {
         min-height: 1.72rem;
         font-size: 0.62rem;
@@ -1383,9 +1609,17 @@ h3 {
     }
 
     .certification-logo {
-        width: 2.3rem;
-        height: 2.3rem;
-        padding: 0.18rem;
+        width: 3rem;
+        height: 3rem;
+        padding: 0.28rem;
+    }
+
+    .certification-provider {
+        font-size: 0.56rem;
+    }
+
+    .certification-card h3 {
+        font-size: 0.86rem;
     }
 
     .certificate-modal {
@@ -1406,7 +1640,7 @@ h3 {
     }
 
     .project-card img {
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 19 / 10;
     }
 
     .floating-github {
@@ -1439,6 +1673,10 @@ h3 {
         font-size: 1.52rem;
     }
 
+    .hero-name {
+        gap: 0.32rem;
+    }
+
     h2 {
         font-size: 1.28rem;
     }
@@ -1462,22 +1700,82 @@ h3 {
         padding: 0.65rem 0.75rem;
     }
 
+    .nav-link,
+    .nav-cta {
+        width: 2.9rem;
+        height: 2.9rem;
+        border-radius: 14px;
+    }
+
+    .nav-icon {
+        width: 1.65rem;
+        height: 1.65rem;
+    }
+
     .about-section .section-box {
         width: calc(100% - var(--page-gutter-total));
         max-width: 24rem;
     }
 
+    .certifications-section .section-box {
+        padding: 1.25rem;
+    }
+
+    .contact-section .section-heading {
+        padding-inline: 0.3rem;
+    }
+
+    .project-body,
+    .contact-content {
+        padding: 1.4rem;
+    }
+
+    .about-motto {
+        padding: 1.2rem;
+    }
+
+    .about-motto p {
+        font-size: 0.78rem;
+    }
+
+    .about-story-card {
+        padding: 1.3rem;
+    }
+
+    .about-story-intro {
+        font-size: 0.8rem;
+        line-height: 1.65;
+    }
+
     .about-entry,
     .about-entry--reverse {
         grid-template-columns: minmax(0, 1fr) 3.15rem;
-        padding: 1.2rem;
+        padding: 1.35rem 0;
     }
 
     .about-logo {
         width: 3.05rem;
     }
 
-    .section-intro,
+    .certifications-panel {
+        padding: 0;
+    }
+
+    .certification-card {
+        gap: 0.65rem;
+        padding: 1.05rem;
+    }
+
+    .certification-logo {
+        width: 2.72rem;
+        height: 2.72rem;
+        padding: 0.24rem;
+    }
+
+    .certification-card h3 {
+        font-size: 0.8rem;
+    }
+
     .contact-intro,
     .about-entry p,
     .project-body p {
@@ -1501,41 +1799,33 @@ h3 {
     }
 }
 
-@keyframes myanimation {
+@keyframes heroColorCycle {
     0% {
-        background-color: rgba(215, 255, 255, 0.58);
+        background-color: #d6f6ff;
     }
 
-    12.5% {
-        background-color: rgba(218, 255, 232, 0.58);
+    16% {
+        background-color: #d9f9e9;
     }
 
-    25% {
-        background-color: rgba(255, 255, 222, 0.58);
+    32% {
+        background-color: #ffe2bd;
     }
 
-    37.5% {
-        background-color: rgba(255, 237, 226, 0.58);
+    48% {
+        background-color: #ffd7cf;
     }
 
-    50% {
-        background-color: rgba(255, 229, 229, 0.58);
+    64% {
+        background-color: #ffd7e7;
     }
 
-    62.5% {
-        background-color: rgba(255, 228, 240, 0.58);
-    }
-
-    75% {
-        background-color: rgba(254, 226, 255, 0.58);
-    }
-
-    87.5% {
-        background-color: rgba(230, 228, 255, 0.58);
+    82% {
+        background-color: #e8e2ff;
     }
 
     100% {
-        background-color: rgba(228, 255, 255, 0.58);
+        background-color: #d6f6ff;
     }
 }
 

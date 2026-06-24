@@ -143,38 +143,53 @@ if (hero && heroNetwork) {
         let nodes = [];
 
         const getNodeCount = () => {
-            const density = width < 560 ? 15000 : 11000;
-            const minimum = width < 560 ? 26 : 38;
-            return Math.round(Math.min(92, Math.max(minimum, (width * height) / density)));
+            const density = width < 560 ? 11800 : 9200;
+            const minimum = width < 560 ? 32 : 50;
+            return Math.round(Math.min(122, Math.max(minimum, (width * height) / density)));
         };
 
         const getLinkDistance = () => {
             if (width < 560) {
-                return 92;
+                return 118;
             }
 
             if (width < 900) {
-                return 116;
+                return 148;
             }
 
-            return 146;
+            return 184;
         };
 
-        const createNode = () => {
+        const createNode = (x = Math.random() * width, y = Math.random() * height) => {
             const speed = width < 560 ? 0.22 : 0.34;
 
             return {
-                x: Math.random() * width,
-                y: Math.random() * height,
+                x,
+                y,
                 vx: (Math.random() - 0.5) * speed,
                 vy: (Math.random() - 0.5) * speed,
-                radius: 1.05 + Math.random() * 1.45,
+                radius: 1.15 + Math.random() * 1.55,
                 pulse: Math.random() * Math.PI * 2,
             };
         };
 
         const buildNodes = () => {
-            nodes = Array.from({ length: getNodeCount() }, createNode);
+            const count = getNodeCount();
+            const columns = Math.ceil(Math.sqrt(count * (width / Math.max(height, 1))));
+            const rows = Math.ceil(count / columns);
+            const cellWidth = width / columns;
+            const cellHeight = height / rows;
+
+            nodes = Array.from({ length: count }, (_, index) => {
+                const column = index % columns;
+                const row = Math.floor(index / columns);
+                const jitterX = (Math.random() - 0.5) * cellWidth * 0.52;
+                const jitterY = (Math.random() - 0.5) * cellHeight * 0.52;
+                const x = Math.min(width - 8, Math.max(8, column * cellWidth + cellWidth / 2 + jitterX));
+                const y = Math.min(height - 8, Math.max(8, row * cellHeight + cellHeight / 2 + jitterY));
+
+                return createNode(x, y);
+            });
         };
 
         const resizeCanvas = () => {
@@ -204,7 +219,7 @@ if (hero && heroNetwork) {
             context.beginPath();
             context.moveTo(startX, startY);
             context.lineTo(endX, endY);
-            context.lineWidth = width < 560 ? 0.75 : 0.9;
+            context.lineWidth = width < 560 ? 0.82 : 1.05;
             context.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
             context.stroke();
         };
@@ -253,11 +268,13 @@ if (hero && heroNetwork) {
             const isReducedMotion = prefersReducedMotion.matches;
             const delta = isReducedMotion ? 0 : Math.min(32, timestamp - lastFrame || 16) / 16.67;
             const linkDistance = getLinkDistance();
-            const pointerDistance = width < 560 ? 105 : 142;
+            const pointerDistance = width < 560 ? 122 : 168;
+            const linkCounts = new Array(nodes.length).fill(0);
+            const maxLinksPerNode = width < 560 ? 4 : 6;
 
             lastFrame = timestamp;
             context.clearRect(0, 0, width, height);
-            context.lineWidth = width < 560 ? 0.75 : 0.9;
+            context.lineWidth = width < 560 ? 0.82 : 1.05;
             context.lineCap = "round";
 
             nodes.forEach((node) => {
@@ -268,17 +285,23 @@ if (hero && heroNetwork) {
 
             for (let i = 0; i < nodes.length; i += 1) {
                 for (let j = i + 1; j < nodes.length; j += 1) {
+                    if (linkCounts[i] >= maxLinksPerNode || linkCounts[j] >= maxLinksPerNode) {
+                        continue;
+                    }
+
                     const firstNode = nodes[i];
                     const secondNode = nodes[j];
                     const distance = Math.hypot(firstNode.x - secondNode.x, firstNode.y - secondNode.y);
 
                     if (distance < linkDistance) {
+                        linkCounts[i] += 1;
+                        linkCounts[j] += 1;
                         drawLine(
                             firstNode.x,
                             firstNode.y,
                             secondNode.x,
                             secondNode.y,
-                            (1 - distance / linkDistance) * 0.72
+                            (1 - distance / linkDistance) * 0.78
                         );
                     }
                 }
@@ -294,12 +317,12 @@ if (hero && heroNetwork) {
                             pointer.y,
                             node.x,
                             node.y,
-                            (1 - pointerLinkDistance / pointerDistance) * 0.82
+                            (1 - pointerLinkDistance / pointerDistance) * 0.9
                         );
                     }
                 }
 
-                const pulse = isReducedMotion ? 0.74 : 0.74 + Math.sin(timestamp / 850 + node.pulse) * 0.12;
+                const pulse = isReducedMotion ? 0.78 : 0.78 + Math.sin(timestamp / 850 + node.pulse) * 0.1;
 
                 context.beginPath();
                 context.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
@@ -308,7 +331,7 @@ if (hero && heroNetwork) {
 
                 context.beginPath();
                 context.arc(node.x, node.y, node.radius + 2.4, 0, Math.PI * 2);
-                context.strokeStyle = "rgba(255, 255, 255, 0.22)";
+                context.strokeStyle = "rgba(255, 255, 255, 0.3)";
                 context.stroke();
             });
 
