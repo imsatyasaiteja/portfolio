@@ -473,7 +473,7 @@ h3 {
     grid-template-columns: 9rem minmax(0, 1fr);
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 0;
     background: transparent;
     padding: clamp(1.35rem, 3.5vw, 2.35rem) 0;
@@ -886,6 +886,44 @@ h3 {
     color: rgba(255, 255, 255, 0.86);
     font-size: 0.9rem;
     line-height: 1.75;
+}
+
+.contact-identity {
+    max-width: 31rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.82rem;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+}
+
+.contact-identity h3 {
+    margin: 0 0 0.65rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.contact-identity p {
+    margin: 0;
+}
+
+.contact-identity p + p {
+    margin-top: 0.75rem;
+}
+
+.contact-identity strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.contact-identity-handle {
+    display: inline-block;
+    padding: 0.05rem 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .contact-content {
