@@ -881,7 +881,8 @@ h3 {
     color: #ffffff;
 }
 
-.contact-intro {
+.contact-intro,
+.contact-identity {
     max-width: 31rem;
     color: rgba(255, 255, 255, 0.86);
     font-size: 0.9rem;
@@ -889,13 +890,9 @@ h3 {
 }
 
 .contact-identity {
-    max-width: 31rem;
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
     padding-top: 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.86);
-    font-size: 0.82rem;
-    line-height: 1.75;
     overflow-wrap: anywhere;
 }
 
@@ -907,6 +904,8 @@ h3 {
 
 .contact-identity p {
     margin: 0;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 .contact-identity p + p {
@@ -1327,7 +1326,8 @@ h3 {
         max-width: 42rem;
     }
 
-    .contact-intro {
+    .contact-intro,
+    .contact-identity {
         max-width: 38rem;
     }
 
@@ -1485,6 +1485,7 @@ h3 {
     }
 
     .contact-intro,
+    .contact-identity,
     .about-story-intro,
     .about-entry p,
     .project-body p {
@@ -1548,6 +1549,25 @@ h3 {
         text-align: center;
     }
 
+    .about-story-intro,
+    .about-entry p {
+        text-align: justify;
+        text-align-last: left;
+        -webkit-hyphens: none;
+        hyphens: none;
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+
+    @supports (hyphenate-limit-chars: 14 6 6) {
+        .about-story-intro,
+        .about-entry p {
+            -webkit-hyphens: auto;
+            hyphens: auto;
+            hyphenate-limit-chars: 14 6 6;
+        }
+    }
+
     .about-motto {
         margin: 0;
         padding: 1.35rem;
@@ -1565,7 +1585,7 @@ h3 {
     }
 
     .about-story-card {
-        padding: 1.6rem;
+        padding: 1.6rem 1.4rem;
     }
 
     .about-story-intro {
@@ -1777,7 +1797,7 @@ h3 {
     }
 
     .about-story-card {
-        padding: 1.3rem;
+        padding: 1.3rem 1.15rem;
     }
 
     .about-story-intro {
@@ -1815,6 +1835,7 @@ h3 {
     }
 
     .contact-intro,
+    .contact-identity,
     .about-entry p,
     .project-body p {
         font-size: 0.8rem;
